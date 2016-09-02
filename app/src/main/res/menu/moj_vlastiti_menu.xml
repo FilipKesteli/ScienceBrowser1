@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_account_circle"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Prvi item"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_account_balance"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Drugi item"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/action_shopping_cart"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="Buy"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/action_delete"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="Delete"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/action_euro"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="Balance"
+                app:showAsAction="always" />
+
+        </menu>
+
+    </item>
+
+</menu>
