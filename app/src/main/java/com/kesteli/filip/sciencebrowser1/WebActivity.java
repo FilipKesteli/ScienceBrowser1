@@ -38,6 +38,8 @@ public class WebActivity extends AppCompatActivity {
             R.drawable.ic_account_circle_black_24dp
     };
 
+    private String[] clanci = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,22 +52,20 @@ public class WebActivity extends AppCompatActivity {
         setupTabIcons();
     }
 
-    private String[] clanci = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
-
     private void handleIntents() {
         Intent intent = getIntent();
         if (intent.hasExtra(MainActivity.fizika_clanci)) {
             clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
         } else if (intent.hasExtra(MainActivity.kemija_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+            clanci = intent.getStringArrayExtra(MainActivity.kemija_clanci);
         } else if (intent.hasExtra(MainActivity.matematika_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+            clanci = intent.getStringArrayExtra(MainActivity.matematika_clanci);
         } else if (intent.hasExtra(MainActivity.tehnika_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+            clanci = intent.getStringArrayExtra(MainActivity.tehnika_clanci);
         } else if (intent.hasExtra(MainActivity.medicina_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+            clanci = intent.getStringArrayExtra(MainActivity.medicina_clanci);
         } else if (intent.hasExtra(MainActivity.biologija_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
         }
         Toast.makeText(WebActivity.this, clanci[2], Toast.LENGTH_SHORT).show();
     }
@@ -84,16 +84,10 @@ public class WebActivity extends AppCompatActivity {
     private void setupViewPager() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new WebFragment(), "ONE");
-        adapter.addFrag(new WebFragment(), "TWO");
-        adapter.addFrag(new WebFragment(), "THREE");
-        adapter.addFrag(new WebFragment(), "FOUR");
-        adapter.addFrag(new WebFragment(), "FIVE");
-        adapter.addFrag(new WebFragment(), "SIX");
-        adapter.addFrag(new WebFragment(), "SEVEN");
-        adapter.addFrag(new WebFragment(), "EIGHT");
-        adapter.addFrag(new WebFragment(), "NINE");
-        adapter.addFrag(new WebFragment(), "TEN");
+
+        for (int i = 0; i < clanci.length; i++) {
+            adapter.addFrag(new WebFragment(), clanci[i]);
+        }
         viewPager.setAdapter(adapter);
     }
 
@@ -156,3 +150,5 @@ public class WebActivity extends AppCompatActivity {
         return true;
     }
 }
+
+
