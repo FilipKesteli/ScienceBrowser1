@@ -1,5 +1,6 @@
 package com.kesteli.filip.sciencebrowser1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
@@ -19,6 +20,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,6 +40,11 @@ public class MainActivity extends AppCompatActivity
         setupHamburgerIcon();
         setupNavigationView();
         setupRecyclerView();
+        setupListeners();
+    }
+
+    private void setupListeners() {
+
     }
 
     private void initWidgets() {
@@ -185,14 +194,53 @@ public class MainActivity extends AppCompatActivity
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        arraysOfArticles();
                         int position = getAdapterPosition();
+                        Intent intent = new Intent(MainActivity.this, WebActivity.class);
+                        if (position == 0) {
+                            intent.putExtra(fizika_clanci, fizika);
+                        } else if (position == 1) {
+                            intent.putExtra(kemija_clanci, kemija);
+                        } else if (position == 2) {
+                            intent.putExtra(matematika_clanci, matematika);
+                        } else if (position == 3) {
+                            intent.putExtra(tehnika_clanci, tehnika);
+                        } else if (position == 4) {
+                            intent.putExtra(medicina_clanci, medicina);
+                        } else if (position == 5) {
+                            intent.putExtra(biologija_clanci, biologija);
+                        }
+                        startActivity(intent);
+
                         Snackbar.make(view, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     }
                 });
             }
         }
     }
-}
 
+    public static final String fizika_clanci = "fizika_clanci";
+    public static final String kemija_clanci = "fizika_clanci";
+    public static final String matematika_clanci = "fizika_clanci";
+    public static final String tehnika_clanci = "tehnika_clanci";
+    public static final String medicina_clanci = "medicina_clanci";
+    public static final String biologija_clanci = "biologija_clanci";
+
+    private String[] fizika = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+    private String[] kemija = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+    private String[] matematika = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+    private String[] tehnika = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+    private String[] medicina = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+    private String[] biologija = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+
+    private void arraysOfArticles() {
+        List<String> fizika = new ArrayList<>();
+        List<String> kemija = new ArrayList<>();
+        List<String> matematika = new ArrayList<>();
+        List<String> tehnika = new ArrayList<>();
+        List<String> medicina = new ArrayList<>();
+        List<String> biologija = new ArrayList<>();
+    }
+}
 
 

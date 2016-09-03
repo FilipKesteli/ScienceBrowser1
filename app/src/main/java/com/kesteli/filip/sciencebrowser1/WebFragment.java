@@ -67,7 +67,7 @@ public class WebFragment extends Fragment {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             mUrl = view.getUrl();
             mTitle = view.getTitle();
-            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
         }
     }
 }

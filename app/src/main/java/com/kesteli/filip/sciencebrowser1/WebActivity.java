@@ -1,5 +1,6 @@
 package com.kesteli.filip.sciencebrowser1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.ProgressDialog;
@@ -42,10 +43,31 @@ public class WebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
+        handleIntents();
         setupToolbar();
         setupViewPager();
         setupTabLayout();
         setupTabIcons();
+    }
+
+    private String[] clanci = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+
+    private void handleIntents() {
+        Intent intent = getIntent();
+        if (intent.hasExtra(MainActivity.fizika_clanci)) {
+            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        } else if (intent.hasExtra(MainActivity.kemija_clanci)) {
+            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        } else if (intent.hasExtra(MainActivity.matematika_clanci)) {
+            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        } else if (intent.hasExtra(MainActivity.tehnika_clanci)) {
+            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        } else if (intent.hasExtra(MainActivity.medicina_clanci)) {
+            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        } else if (intent.hasExtra(MainActivity.biologija_clanci)) {
+            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        }
+        Toast.makeText(WebActivity.this, clanci[2], Toast.LENGTH_SHORT).show();
     }
 
     private void setupToolbar() {
