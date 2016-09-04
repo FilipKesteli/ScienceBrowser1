@@ -135,12 +135,131 @@ public class MainActivity extends AppCompatActivity
     public static final String medicina_clanci = "medicina_clanci";
     public static final String biologija_clanci = "biologija_clanci";
 
-    private String[] fizika = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
-    private String[] kemija = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
-    private String[] matematika = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
-    private String[] tehnika = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
-    private String[] medicina = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
-    private String[] biologija = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
+    private String[] clanci_fizika = {
+            "http://www.iflscience.com/physics/",
+            "https://www.sciencenews.org/",
+            "https://www.sciencenews.org/topic/atom-cosmos",
+            "http://www.scientificamerican.com/physics/",
+            "http://phys.org/physics-news/",
+            "http://phys.org/earth-news/earth-sciences/",
+            "http://scitation.aip.org/",
+            "http://www.physics-astronomy.com/search/label/Quantum%20Mechanics#.V8q3xE197Z4",
+            "http://www.physics-astronomy.com/search/label/Physics#.V8q310197Z4",
+            "https://www.newscientist.com/subject/physics/"
+    };
+
+    private String[] fizika = {};
+    private String[] kemija = {};
+    private String[] matematika = {};
+    private String[] tehnika = {};
+    private String[] medicina = {};
+    private String[] biologija = {};
+    private String[] astronomija = {};
+    private String[] geologija = {};
+
+    private String[] clanci_kemija = {
+            "http://www.scientificamerican.com/chemistry/",
+            "http://phys.org/chemistry-news/",
+            "http://www.iflscience.com/chemistry/",
+            "https://www.sciencedaily.com/news/matter_energy/chemistry/",
+            "http://www.sciencemag.org/category/chemistry",
+            "https://www.rsc.org/chemistryworld/news",
+            "http://www.nytimes.com/topic/subject/chemistry",
+            "http://www.sci-news.com/news/othersciences/chemistry",
+            "http://cen.acs.org/news.html",
+            "http://scienceworld.scholastic.com/Chemistry-News/"
+    };
+
+    private String[] clanci_matematika = {
+            "http://www.scientificamerican.com/math/",
+            "https://www.sciencedaily.com/news/computers_math/mathematics/",
+            "http://phys.org/science-news/mathematics/",
+            "https://plus.maths.org/content/News",
+            "http://www.independent.co.uk/topic/Mathematics",
+            "http://news.mit.edu/topic/mathematics",
+            "http://www.usnews.com/topics/subjects/math",
+            "http://math.alltop.com/",
+            "http://www.nytimes.com/topic/subject/mathematics",
+            "http://www.ams.org/news/math-in-the-media/mathdigest-index"
+    };
+
+    private String[] clanci_tehnika = {
+            "http://www.bbc.com/news/technology",
+            "http://edition.cnn.com/tech",
+            "http://www.cnet.com/news/",
+            "http://www.technewsworld.com/",
+            "http://www.theverge.com/tech",
+            "http://timesofindia.indiatimes.com/tech/tech-news",
+            "http://www.telegraph.co.uk/technology/news/",
+            "http://www.extremetech.com/",
+            "http://www.news.com.au/technology",
+            "http://www.reuters.com/news/technology"
+    };
+
+    private String[] clanci_medicina = {
+            "http://www.bbc.com/news/us/health",
+            "http://www.medicalnewstoday.com/",
+            "https://www.sciencedaily.com/news/health_medicine/",
+            "http://www.news-medical.net/",
+            "http://www.livescience.com/health",
+            "http://www.internalmedicinenews.com/",
+            "http://www.medpagetoday.com/specialty",
+            "http://med.stanford.edu/news.html",
+            "http://med.stanford.edu/news/all-news.html",
+            "http://edition.cnn.com/health"
+    };
+
+    private String[] clanci_biologija = {
+            "http://www.scientificamerican.com/biology/",
+            "https://www.sciencedaily.com/news/plants_animals/biology/",
+            "http://www.sci-news.com/news/biology",
+            "http://phys.org/biology-news/",
+            "http://www.biologynews.net/",
+            "https://nsf.gov/news/index.jsp?prio_area=3",
+            "http://www.sciencemag.org/category/biology",
+            "http://www.usnews.com/topics/subjects/biology",
+            "https://www.theguardian.com/science/biology",
+            "http://scienceworld.scholastic.com/Biology-News/"
+    };
+
+    /*private String[] filozofija_clanci = {
+            "http://www.philosophynews.com/category/Article.aspx",
+            "https://www.theguardian.com/world/philosophy",
+            "http://www.independent.co.uk/topic/Philosophy",
+            "http://philosophy.alltop.com/",
+            "http://www.critical-theory.com/",
+            "http://existentialcomics.com/comic/83",
+            "https://philosophynow.org/",
+            "http://thephilosophersmail.com/",
+            "https://newsphilosophy.wordpress.com/",
+            "https://www.kent.ac.uk/secl/philosophy/news/"
+    };*/
+
+    private String[] clanci_astronomija = {
+            "http://www.astronomy.com/news",
+            "http://www.skyandtelescope.com/astronomy-news/",
+            "http://phys.org/space-news/astronomy/",
+            "https://www.sciencedaily.com/news/space_time/astronomy/",
+            "https://astronomynow.com/category/news/",
+            "http://www.sci-news.com/news/astronomy",
+            "http://www.space.com/science-astronomy",
+            "https://www.newscientist.com/subject/space/",
+            "http://www.universetoday.com/",
+            "http://www.skyatnightmagazine.com/astronomy-news"
+    };
+
+    private String[] clanci_geologija = {
+            "https://www.sciencedaily.com/news/earth_climate/geology/",
+            "http://geology.com/",
+            "http://www.sci-news.com/news/geology",
+            "https://www.theguardian.com/science/geology",
+            "http://geology.alltop.com/",
+            "http://www.nature.com/subjects/geology",
+            "http://www.livescience.com/environment",
+            "http://www.geosociety.org/news/",
+            "http://www.telegraph.co.uk/news/earth/environment/geology/",
+            "http://www.independent.co.uk/topic/Geology"
+    };
 
     private void setupRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -160,6 +279,8 @@ public class MainActivity extends AppCompatActivity
                 "Tehnika",
                 "Medicina",
                 "Biologija",
+                "Astronomija",
+                "Geologija"
         };
 
         private int[] images = {
@@ -168,8 +289,11 @@ public class MainActivity extends AppCompatActivity
                 R.drawable.ic_all_inclusive_white_24dp,
                 R.drawable.ic_directions_boat_white_24dp,
                 R.drawable.ic_local_hospital_white_24dp,
-                R.drawable.ic_local_florist_white_24dp
+                R.drawable.ic_local_florist_white_24dp,
+                R.drawable.ic_star_white_24dp,
+                R.drawable.ic_filter_hdr_white_24dp
         };
+
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -212,7 +336,7 @@ public class MainActivity extends AppCompatActivity
                         } else if (position == 2) {
                             intent.putExtra(matematika_clanci, matematika);
                         } else if (position == 3) {
-                            intent.putExtra(fizika_clanci, fizika);
+                            intent.putExtra(tehnika_clanci, tehnika);
                         } else if (position == 4) {
                             intent.putExtra(medicina_clanci, medicina);
                         } else if (position == 5) {
@@ -227,5 +351,4 @@ public class MainActivity extends AppCompatActivity
         }
     }
 }
-
 
