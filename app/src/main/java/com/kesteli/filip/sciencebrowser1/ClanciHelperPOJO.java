@@ -3,7 +3,7 @@ package com.kesteli.filip.sciencebrowser1;
 /**
  * Created by Filip on 4.9.2016..
  */
-public class ClanciHelper {
+public class ClanciHelperPOJO {
 
     private static final String fizika_clanci = "fizika_clanci";
     private static final String kemija_clanci = "fizika_clanci";

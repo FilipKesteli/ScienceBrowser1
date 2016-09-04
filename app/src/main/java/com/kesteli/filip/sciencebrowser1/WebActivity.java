@@ -3,9 +3,7 @@ package com.kesteli.filip.sciencebrowser1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.ProgressDialog;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -21,24 +19,11 @@ import java.util.List;
 
 public class WebActivity extends AppCompatActivity {
 
-    private ClanciHelper clanciHelper = new ClanciHelper();
+    private ClanciHelperPOJO clanciHelperPOJO = new ClanciHelperPOJO();
     private Toolbar toolbar;
     private TabLayout tabLayout;
 
     private ViewPager viewPager;
-
-    private int[] tabIcons = {
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp,
-            R.drawable.ic_account_circle_black_24dp
-    };
 
     private String[] clanci = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
 
@@ -52,23 +37,27 @@ public class WebActivity extends AppCompatActivity {
         setupToolbar();
         setupViewPager();
         setupTabLayout();
-        setupTabIcons1();
+        setupTabIcons();
     }
 
     private void handleIntents() {
         Intent intent = getIntent();
-        if (intent.hasExtra(MainActivity.fizika_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
-        } else if (intent.hasExtra(MainActivity.kemija_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.kemija_clanci);
-        } else if (intent.hasExtra(MainActivity.matematika_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.matematika_clanci);
-        } else if (intent.hasExtra(MainActivity.tehnika_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.tehnika_clanci);
-        } else if (intent.hasExtra(MainActivity.medicina_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.medicina_clanci);
-        } else if (intent.hasExtra(MainActivity.biologija_clanci)) {
-            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
+        if (intent.hasExtra(ClanciHelperPOJO.getFizika_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getKemija_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.kemija_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getMatematika_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.matematika_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getTehnika_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.tehnika_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getMedicina_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.medicina_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getBiologija_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getAstronomija_clanci())) {
+//            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
+        } else if (intent.hasExtra(ClanciHelperPOJO.getGeologija_clanci()   )) {
+//            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
         }
     }
 
@@ -94,15 +83,9 @@ public class WebActivity extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        for (int i = 0; i < tabIcons.length; i++) {
-            tabLayout.getTabAt(i).setIcon(tabIcons[i]);
-        }
-    }
-
-    private void setupTabIcons1() {
-        for (int i = 0; i < tabIcons.length; i++) {
+        for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
 //            tabLayout.getTabAt(i).setIcon(images[1]);
-            tabLayout.getTabAt(i).setIcon(clanciHelper.getImages()[4]);
+            tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[4]);
         }
     }
 
