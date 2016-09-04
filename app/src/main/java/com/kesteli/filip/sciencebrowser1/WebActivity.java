@@ -21,18 +21,11 @@ import java.util.List;
 
 public class WebActivity extends AppCompatActivity {
 
+    private ClanciHelper clanciHelper = new ClanciHelper();
     private Toolbar toolbar;
     private TabLayout tabLayout;
-    private ViewPager viewPager;
 
-    private int[] images = {
-            R.drawable.ic_wifi_tethering_white_24dp,
-            R.drawable.ic_local_drink_white_24dp,
-            R.drawable.ic_all_inclusive_white_24dp,
-            R.drawable.ic_directions_boat_white_24dp,
-            R.drawable.ic_local_hospital_white_24dp,
-            R.drawable.ic_local_florist_white_24dp
-    };
+    private ViewPager viewPager;
 
     private int[] tabIcons = {
             R.drawable.ic_account_circle_black_24dp,
@@ -56,30 +49,10 @@ public class WebActivity extends AppCompatActivity {
 
         handleIntents();
 
-        setupSve();
-
-        /*setupToolbar();
+        setupToolbar();
         setupViewPager();
         setupTabLayout();
-        setupTabIcons();*/
-    }
-
-    private void setupSve() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        for (int i = 0; i < clanci.length; i++) {
-            adapter.addFrag(new WebFragment(), clanci[i]);
-        }
-        viewPager.setAdapter(adapter);
-        for (int i = 0; i < tabIcons.length; i++) {
-            tabLayout.getTabAt(i).setIcon(tabIcons[i]);
-        }
+        setupTabIcons1();
     }
 
     private void handleIntents() {
@@ -97,7 +70,6 @@ public class WebActivity extends AppCompatActivity {
         } else if (intent.hasExtra(MainActivity.biologija_clanci)) {
             clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
         }
-        //Toast.makeText(WebActivity.this, clanci[2], Toast.LENGTH_SHORT).show();
     }
 
     private void setupToolbar() {
@@ -124,6 +96,13 @@ public class WebActivity extends AppCompatActivity {
     private void setupTabIcons() {
         for (int i = 0; i < tabIcons.length; i++) {
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
+        }
+    }
+
+    private void setupTabIcons1() {
+        for (int i = 0; i < tabIcons.length; i++) {
+//            tabLayout.getTabAt(i).setIcon(images[1]);
+            tabLayout.getTabAt(i).setIcon(clanciHelper.getImages()[4]);
         }
     }
 
@@ -180,5 +159,6 @@ public class WebActivity extends AppCompatActivity {
         return true;
     }
 }
+
 
 

@@ -26,8 +26,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private ClanciHelper clanciHelper = new ClanciHelper();
     private Toolbar toolbar;
     private DrawerLayout drawer;
+
     private NavigationView navigationView;
 
     @Override
@@ -97,6 +99,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -122,40 +125,35 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
-    private GridLayoutManager gridLayoutManager; //kartice u mreži
 
+    private GridLayoutManager gridLayoutManager; //kartice u mreži
     public static final String fizika_clanci = "fizika_clanci";
     public static final String kemija_clanci = "fizika_clanci";
     public static final String matematika_clanci = "fizika_clanci";
     public static final String tehnika_clanci = "tehnika_clanci";
     public static final String medicina_clanci = "medicina_clanci";
     public static final String biologija_clanci = "biologija_clanci";
+    public static final String astronomija_clanci = "astronomija_clanci";
+
+    public static final String geologija_clanci = "geologija_clanci";
 
     private String[] clanci_fizika = {
-            "http://www.iflscience.com/physics/",
-            "https://www.sciencenews.org/",
-            "https://www.sciencenews.org/topic/atom-cosmos",
-            "http://www.scientificamerican.com/physics/",
             "http://phys.org/physics-news/",
-            "http://phys.org/earth-news/earth-sciences/",
-            "http://scitation.aip.org/",
-            "http://www.physics-astronomy.com/search/label/Quantum%20Mechanics#.V8q3xE197Z4",
-            "http://www.physics-astronomy.com/search/label/Physics#.V8q310197Z4",
-            "https://www.newscientist.com/subject/physics/"
+            "https://www.sciencedaily.com/news/matter_energy/physics/",
+            "http://physicsworld.com/cws/channel/news",
+            "http://www.physics.org/news.asp",
+            "http://scitation.aip.org/content/aip/magazine/physicstoday/news",
+            "http://www.scientificamerican.com/physics/",
+            "http://discovermagazine.com/tags/physics",
+            "https://physics.aps.org/",
+            "https://www.newscientist.com/subject/physics/",
+            "http://www.sci-news.com/news/physics"
     };
 
-    private String[] fizika = {};
-    private String[] kemija = {};
-    private String[] matematika = {};
-    private String[] tehnika = {};
-    private String[] medicina = {};
-    private String[] biologija = {};
-    private String[] astronomija = {};
-    private String[] geologija = {};
+    private String[] fizika = {"phys.org", "science daily", "physics world", "physics.org", "scitation.aip", "sci american", "discover", "physics.aps", "new scientist", "sci news"};
 
     private String[] clanci_kemija = {
             "http://www.scientificamerican.com/chemistry/",
@@ -170,6 +168,8 @@ public class MainActivity extends AppCompatActivity
             "http://scienceworld.scholastic.com/Chemistry-News/"
     };
 
+    private String[] kemija = {"sci american", "phys.org", "ifl science", "science daily", "science mag", "chem world", "ny times", "sci-news", "cen.acs.org", "science world"};
+
     private String[] clanci_matematika = {
             "http://www.scientificamerican.com/math/",
             "https://www.sciencedaily.com/news/computers_math/mathematics/",
@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity
             "http://www.nytimes.com/topic/subject/mathematics",
             "http://www.ams.org/news/math-in-the-media/mathdigest-index"
     };
+
+    private String[] matematika = {"sci american", "science daily", "phys.org", "plus.maths.org", "independent.co.uk", "news mit", "us news", "math.alltop", "ny times", "ams.org"};
 
     private String[] clanci_tehnika = {
             "http://www.bbc.com/news/technology",
@@ -196,6 +198,8 @@ public class MainActivity extends AppCompatActivity
             "http://www.reuters.com/news/technology"
     };
 
+    private String[] tehnika = {"bbc", "cnn", "cnet", "tech news world", "the verge", "times of india", "telegraph", "extreme tech", "news.com", "reuters"};
+
     private String[] clanci_medicina = {
             "http://www.bbc.com/news/us/health",
             "http://www.medicalnewstoday.com/",
@@ -208,6 +212,8 @@ public class MainActivity extends AppCompatActivity
             "http://med.stanford.edu/news/all-news.html",
             "http://edition.cnn.com/health"
     };
+
+    private String[] medicina = {"bbc", "medical news today", "sci daily", "news medical", "live science", "inter med news", "med page", "standford", "stanford all", "cnn"};
 
     private String[] clanci_biologija = {
             "http://www.scientificamerican.com/biology/",
@@ -222,18 +228,7 @@ public class MainActivity extends AppCompatActivity
             "http://scienceworld.scholastic.com/Biology-News/"
     };
 
-    /*private String[] filozofija_clanci = {
-            "http://www.philosophynews.com/category/Article.aspx",
-            "https://www.theguardian.com/world/philosophy",
-            "http://www.independent.co.uk/topic/Philosophy",
-            "http://philosophy.alltop.com/",
-            "http://www.critical-theory.com/",
-            "http://existentialcomics.com/comic/83",
-            "https://philosophynow.org/",
-            "http://thephilosophersmail.com/",
-            "https://newsphilosophy.wordpress.com/",
-            "https://www.kent.ac.uk/secl/philosophy/news/"
-    };*/
+    private String[] biologija = {"sci american", "sci daily", "sci news", "phys.org", "bio news", "nsf.gov", "science mag", "us news", "the guardian", "sci world"};
 
     private String[] clanci_astronomija = {
             "http://www.astronomy.com/news",
@@ -248,6 +243,8 @@ public class MainActivity extends AppCompatActivity
             "http://www.skyatnightmagazine.com/astronomy-news"
     };
 
+    private String[] astronomija = {"astronomy.com", "sky and telescope", "phys.org", "sci daily", "astronomy now", "sci news", "space", "new scientist", "universe today", "sky and night"};
+
     private String[] clanci_geologija = {
             "https://www.sciencedaily.com/news/earth_climate/geology/",
             "http://geology.com/",
@@ -261,6 +258,8 @@ public class MainActivity extends AppCompatActivity
             "http://www.independent.co.uk/topic/Geology"
     };
 
+    private String[] geologija = {"sci daily", "geology", "sci news", "the guardian", "geology.alltop", "nature", "live sci", "geo society", "telegraph", "independent"};
+
     private void setupRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
@@ -272,6 +271,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+
         private String[] titles = {
                 "Fizika",
                 "Kemija",
@@ -283,18 +283,6 @@ public class MainActivity extends AppCompatActivity
                 "Geologija"
         };
 
-        private int[] images = {
-                R.drawable.ic_wifi_tethering_white_24dp,
-                R.drawable.ic_local_drink_white_24dp,
-                R.drawable.ic_all_inclusive_white_24dp,
-                R.drawable.ic_directions_boat_white_24dp,
-                R.drawable.ic_local_hospital_white_24dp,
-                R.drawable.ic_local_florist_white_24dp,
-                R.drawable.ic_star_white_24dp,
-                R.drawable.ic_filter_hdr_white_24dp
-        };
-
-
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
@@ -305,13 +293,15 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.znanostTitle.setText(titles[position]);
-            holder.znanostImage.setImageResource(images[position]);
+//            holder.znanostTitle.setText(titles[position]);
+            holder.znanostTitle.setText(clanciHelper.getTitles()[position]);
+//            holder.znanostImage.setImageResource(images[position]);
+            holder.znanostImage.setImageResource(clanciHelper.getImages()[position]);
         }
 
         @Override
         public int getItemCount() {
-            return titles.length;
+            return clanciHelper.getTitles().length;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -341,6 +331,10 @@ public class MainActivity extends AppCompatActivity
                             intent.putExtra(medicina_clanci, medicina);
                         } else if (position == 5) {
                             intent.putExtra(biologija_clanci, biologija);
+                        } else if (position == 6) {
+                            intent.putExtra(astronomija_clanci, astronomija);
+                        } else if (position == 7) {
+                            intent.putExtra(geologija_clanci, geologija);
                         }
                         startActivity(intent);
 
@@ -351,4 +345,5 @@ public class MainActivity extends AppCompatActivity
         }
     }
 }
+
 
