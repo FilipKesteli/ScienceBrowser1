@@ -13,6 +13,12 @@ public class ClanciHelperPOJO {
 
     private static final String MyPREFERENCES = "MyPrefs";
 
+    public static String getWebStranicePREFERENCES() {
+        return webStranicePREFERENCES;
+    }
+
+    private static final String webStranicePREFERENCES = "PreferencaWebStranice";
+
     public static String getMyPREFERENCES() {
         return MyPREFERENCES;
     }

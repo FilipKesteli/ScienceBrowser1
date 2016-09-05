@@ -1,6 +1,8 @@
 package com.kesteli.filip.sciencebrowser1;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
@@ -137,6 +139,10 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setAdapter(adapter);
     }
 
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
         @Override
@@ -174,27 +180,45 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void onClick(View view) {
                         int position = getAdapterPosition();
+
+                        sharedPreferences = getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
+                        editor = sharedPreferences.edit();
+
                         Intent intent = new Intent(MainActivity.this, WebActivity.class);
                         if (position == 0) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getFizika_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getFizika_clanci(), ClanciHelperPOJO.getFizika_clanci());
                         } else if (position == 1) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getKemija_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getKemija_clanci(), ClanciHelperPOJO.getKemija_clanci());
                         } else if (position == 2) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getMatematika_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getMatematika_clanci(), ClanciHelperPOJO.getMatematika_clanci());
                         } else if (position == 3) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getTehnika_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getTehnika_clanci(), ClanciHelperPOJO.getTehnika_clanci());
                         } else if (position == 4) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getMedicina_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getMedicina_clanci(), ClanciHelperPOJO.getMedicina_clanci());
                         } else if (position == 5) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getBiologija_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getBiologija_clanci(), ClanciHelperPOJO.getBiologija_clanci());
                         } else if (position == 6) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getAstronomija_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getAstronomija_clanci(), ClanciHelperPOJO.getAstronomija_clanci());
                         } else if (position == 7) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getGeologija_clanci());
+                            editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getGeologija_clanci(), ClanciHelperPOJO.getGeologija_clanci());
                         }
                         startActivity(intent);
-
-                        Snackbar.make(view, "Click detected on item " + position, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     }
                 });
             }
