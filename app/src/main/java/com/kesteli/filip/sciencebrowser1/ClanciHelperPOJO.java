@@ -5,6 +5,18 @@ package com.kesteli.filip.sciencebrowser1;
  */
 public class ClanciHelperPOJO {
 
+    private static final String MyClanakPREFERENCE = "clanak";
+
+    public static String getMyClanakPREFERENCE() {
+        return MyClanakPREFERENCE;
+    }
+
+    private static final String MyPREFERENCES = "MyPrefs";
+
+    public static String getMyPREFERENCES() {
+        return MyPREFERENCES;
+    }
+
     private static final String fizika_clanci = "fizika_clanci";
     private static final String kemija_clanci = "kemija_clanci";
     private static final String matematika_clanci = "matematika_clanci";

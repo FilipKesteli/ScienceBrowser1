@@ -11,13 +11,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class WebActivity extends AppCompatActivity {
 
@@ -32,6 +35,8 @@ public class WebActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
+
+        Log.e("WebActivity", "debagiranje");
 
         setupToolbar();
         setupViewPager();
@@ -87,12 +92,17 @@ public class WebActivity extends AppCompatActivity {
         editor.commit();*/
     }
 
+    List<String> proba = new ArrayList<>();
+
     private void handleIntents() {
         Intent intent = getIntent();
         if (intent.hasExtra(ClanciHelperPOJO.getFizika_clanci())) {
-            editor.putString(ClanciHelperPOJO.getFizika_clanci(), ClanciHelperPOJO.getFizika_clanci());
+            editor.putString(ClanciHelperPOJO.getMyPREFERENCES(), ClanciHelperPOJO.getFizika_clanci());
             editor.commit();
             for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                editor.putString(ClanciHelperPOJO.getMyClanakPREFERENCE(), clanciHelperPOJO.getClanci_fizika()[i]);
+//                Set<String> stringSet = {"da"};
+                editor.commit();
                 adapter.addFrag(new WebFragment(), clanciHelperPOJO.getFizika()[i]);
             }
             viewPager.setAdapter(adapter);
