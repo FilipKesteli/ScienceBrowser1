@@ -1,6 +1,8 @@
 package com.kesteli.filip.sciencebrowser1;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -22,9 +24,8 @@ public class WebActivity extends AppCompatActivity {
     private ClanciHelperPOJO clanciHelperPOJO = new ClanciHelperPOJO();
     private Toolbar toolbar;
     private TabLayout tabLayout;
-
     private ViewPager viewPager;
-
+    private ViewPagerAdapter adapter;
     private String[] clanci = {"jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam", "devet", "deset"};
 
     @Override
@@ -32,33 +33,13 @@ public class WebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
-        handleIntents();
-
         setupToolbar();
         setupViewPager();
         setupTabLayout();
         setupTabIcons();
-    }
 
-    private void handleIntents() {
-        Intent intent = getIntent();
-        if (intent.hasExtra(ClanciHelperPOJO.getFizika_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.fizika_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getKemija_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.kemija_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getMatematika_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.matematika_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getTehnika_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.tehnika_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getMedicina_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.medicina_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getBiologija_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getAstronomija_clanci())) {
-//            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
-        } else if (intent.hasExtra(ClanciHelperPOJO.getGeologija_clanci()   )) {
-//            clanci = intent.getStringArrayExtra(MainActivity.biologija_clanci);
-        }
+        setupSharedPreferences();
+        handleIntents();
     }
 
     private void setupToolbar() {
@@ -74,18 +55,120 @@ public class WebActivity extends AppCompatActivity {
 
     private void setupViewPager() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
+/*
         for (int i = 0; i < clanci.length; i++) {
             adapter.addFrag(new WebFragment(), clanci[i]);
         }
         viewPager.setAdapter(adapter);
+*/
     }
 
     private void setupTabIcons() {
+/*
         for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
 //            tabLayout.getTabAt(i).setIcon(images[1]);
             tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[4]);
+        }
+*/
+    }
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    public static final String MyPREFERENCES = "MyPrefs";
+
+    private void setupSharedPreferences() {
+        sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        /*editor.putString(Name, n);
+        editor.putString(Phone, ph);
+        editor.putString(Email, e);
+        editor.commit();*/
+    }
+
+    private void handleIntents() {
+        Intent intent = getIntent();
+        if (intent.hasExtra(ClanciHelperPOJO.getFizika_clanci())) {
+            editor.putString(ClanciHelperPOJO.getFizika_clanci(), ClanciHelperPOJO.getFizika_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getFizika()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[0]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getKemija_clanci())) {
+            editor.putString(ClanciHelperPOJO.getKemija_clanci(), ClanciHelperPOJO.getKemija_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getKemija()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[1]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getMatematika_clanci())) {
+            editor.putString(ClanciHelperPOJO.getMatematika_clanci(), ClanciHelperPOJO.getMatematika_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getMatematika()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[2]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getTehnika_clanci())) {
+            editor.putString(ClanciHelperPOJO.getTehnika_clanci(), ClanciHelperPOJO.getTehnika_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getTehnika()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[3]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getMedicina_clanci())) {
+            editor.putString(ClanciHelperPOJO.getMedicina_clanci(), ClanciHelperPOJO.getMedicina_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getMedicina()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[4]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getBiologija_clanci())) {
+            editor.putString(ClanciHelperPOJO.getBiologija_clanci(), ClanciHelperPOJO.getBiologija_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getBiologija()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[5]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getAstronomija_clanci())) {
+            editor.putString(ClanciHelperPOJO.getAstronomija_clanci(), ClanciHelperPOJO.getAstronomija_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getAstronomija()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[6]);
+            }
+        } else if (intent.hasExtra(ClanciHelperPOJO.getGeologija_clanci())) {
+            editor.putString(ClanciHelperPOJO.getGeologija_clanci(), ClanciHelperPOJO.getGeologija_clanci());
+            editor.commit();
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                adapter.addFrag(new WebFragment(), clanciHelperPOJO.getGeologija()[i]);
+            }
+            viewPager.setAdapter(adapter);
+            for (int i = 0; i < clanciHelperPOJO.getImages().length; i++) {
+                tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[7]);
+            }
         }
     }
 
@@ -142,6 +225,5 @@ public class WebActivity extends AppCompatActivity {
         return true;
     }
 }
-
 
 

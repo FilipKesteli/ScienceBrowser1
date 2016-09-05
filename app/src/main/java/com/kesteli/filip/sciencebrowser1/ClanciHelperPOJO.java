@@ -6,8 +6,8 @@ package com.kesteli.filip.sciencebrowser1;
 public class ClanciHelperPOJO {
 
     private static final String fizika_clanci = "fizika_clanci";
-    private static final String kemija_clanci = "fizika_clanci";
-    private static final String matematika_clanci = "fizika_clanci";
+    private static final String kemija_clanci = "kemija_clanci";
+    private static final String matematika_clanci = "matematika_clanci";
     private static final String tehnika_clanci = "tehnika_clanci";
     private static final String medicina_clanci = "medicina_clanci";
     private static final String biologija_clanci = "biologija_clanci";

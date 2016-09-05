@@ -26,12 +26,19 @@ public class WebFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        setupSharedPreferences();
+
         View view = inflater.inflate(R.layout.fragment_web, container, false);
         initWidgets(view);
 //        setupWebView();
         setupWebView();
         setupListeners();
         return view;
+    }
+
+    private void setupSharedPreferences() {
+
     }
 
     private void setupListeners() {
