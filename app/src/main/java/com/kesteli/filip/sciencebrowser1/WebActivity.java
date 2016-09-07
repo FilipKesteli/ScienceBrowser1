@@ -345,15 +345,20 @@ public class WebActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_account_circle:
-                Toast.makeText(WebActivity.this, "Alooohaaaa", Toast.LENGTH_SHORT).show();
+            case R.id.action_history:
+                Intent intent = new Intent(WebActivity.this, HistoryActivity.class);
+                startActivity(intent);
                 break;
-            case R.id.action_shopping_cart:
+            case R.id.action_favorite:
+                Intent intent2 = new Intent(WebActivity.this, FavoritesActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.action_eureka:
+                Intent intent3 = new Intent(WebActivity.this, DragAndDropActivity.class);
+                startActivity(intent3);
+                break;
                 //FACTORY metoda -> odmah iskoristimo vec postojecu ugradenu sprancu za ProgressDialog objekt:
 //                ProgressDialog progressDialog = ProgressDialog.show(MainActivity.this, "Loading Bank Transaction", "Please wait");
-                Toast.makeText(WebActivity.this, "Alooohaaaa", Toast.LENGTH_SHORT).show();
-            case R.id.action_euro:
-                Toast.makeText(WebActivity.this, "Alooohaaaa", Toast.LENGTH_SHORT).show();
         }
         return true;
     }

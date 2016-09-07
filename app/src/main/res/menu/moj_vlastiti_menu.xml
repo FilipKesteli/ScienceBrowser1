@@ -3,12 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_account_circle"
-        android:icon="@drawable/ic_account_circle_black_24dp"
-        android:title="Prvi item"
+        android:id="@+id/action_history"
+        android:icon="@drawable/ic_history_white_24dp"
+        android:title="History"
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_favorite_white_24dp"
+        android:title="Favorite"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_eureka"
+        android:icon="@drawable/ic_wb_sunny_white_24dp"
+        android:title="Eureka"
+        app:showAsAction="always" />
+
+    <!--<item
         android:id="@+id/action_account_balance"
         android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="Drugi item"
@@ -36,6 +48,6 @@
 
         </menu>
 
-    </item>
+    </item>-->
 
 </menu>
