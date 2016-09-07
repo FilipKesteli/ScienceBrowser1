@@ -1,36 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
-
-    <item android:title="Communicate">
+    <item android:title="">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_eureka"
+                android:icon="@drawable/ic_wb_sunny_white_24dp"
+                android:title="Eureka" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_favorite"
+                android:icon="@drawable/ic_favorite_white_24dp"
+                android:title="Favorite" />
+            <item
+                android:id="@+id/nav_history"
+                android:icon="@drawable/ic_history_white_24dp"
+                android:title="History" />
         </menu>
+    </item>
+
+    <item android:title="Sciences">
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_fizika"
+                android:icon="@drawable/ic_wifi_tethering_white_24dp"
+                android:title="@string/physics" />
+            <item
+                android:id="@+id/nav_kemija"
+                android:icon="@drawable/ic_local_drink_white_24dp"
+                android:title="@string/chemistry" />
+            <item
+                android:id="@+id/nav_matematika"
+                android:icon="@drawable/ic_all_inclusive_white_24dp"
+                android:title="@string/mathematics" />
+            <item
+                android:id="@+id/nav_tehnika"
+                android:icon="@drawable/ic_directions_boat_white_24dp"
+                android:title="@string/technology" />
+            <item
+                android:id="@+id/nav_medicina"
+                android:icon="@drawable/ic_local_hospital_white_24dp"
+                android:title="@string/medicine" />
+            <item
+                android:id="@+id/nav_bilogija"
+                android:icon="@drawable/ic_local_florist_white_24dp"
+                android:title="@string/biology" />
+            <item
+                android:id="@+id/nav_astronomija"
+                android:icon="@drawable/ic_star_white_24dp"
+                android:title="@string/astronomy" />
+            <item
+                android:id="@+id/nav_geologija"
+                android:icon="@drawable/ic_filter_hdr_white_24dp"
+                android:title="@string/geology" />
+        </group>
     </item>
 
 </menu>

@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_info) {
             return true;
         }
 
@@ -103,20 +103,41 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        sharedPreferences = getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        Intent intent = new Intent(MainActivity.this, WebActivity.class);
+        String znanost = null;
+        if (id == R.id.nav_fizika) {
+            znanost = ClanciHelperPOJO.getFizika_clanci();
+        } else if (id == R.id.nav_kemija) {
+            znanost = ClanciHelperPOJO.getKemija_clanci();
+        } else if (id == R.id.nav_matematika) {
+            znanost = ClanciHelperPOJO.getMatematika_clanci();
+        } else if (id == R.id.nav_tehnika) {
+            znanost = ClanciHelperPOJO.getTehnika_clanci();
+        } else if (id == R.id.nav_medicina) {
+            znanost = ClanciHelperPOJO.getMedicina_clanci();
+        } else if (id == R.id.nav_bilogija) {
+            znanost = ClanciHelperPOJO.getBiologija_clanci();
+        } else if (id == R.id.nav_astronomija) {
+            znanost = ClanciHelperPOJO.getAstronomija_clanci();
+        } else if (id == R.id.nav_geologija) {
+            znanost = ClanciHelperPOJO.getGeologija_clanci();
+        } else if (id == R.id.nav_eureka) {
+            Intent intentEureka = new Intent(MainActivity.this, DragAndDropActivity.class);
+            startActivity(intentEureka);
+        } else if (id == R.id.nav_favorite) {
+            Intent intentFavorites = new Intent(MainActivity.this, FavoritesActivity.class);
+            startActivity(intentFavorites);
+        } else if (id == R.id.nav_history) {
+            Intent intentHistory = new Intent(MainActivity.this, HistoryActivity.class);
+            startActivity(intentHistory);
         }
+
+        editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), znanost);
+        editor.commit();
+        intent.putExtra(znanost, znanost);
+        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

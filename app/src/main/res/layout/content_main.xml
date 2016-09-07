@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="64dp"
+    android:background="@drawable/kartice_shape"
     android:fitsSystemWindows="true"
+    android:paddingTop="64dp"
     tools:context="com.kesteli.filip.sciencebrowser1.MainActivity">
 
     <!--Staviti sliku iznad izbornika-->

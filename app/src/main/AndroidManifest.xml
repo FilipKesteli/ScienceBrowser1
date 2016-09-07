@@ -26,7 +26,8 @@
             android:label="@string/title_activity_history"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".WebActivity" />
-        <activity android:name=".DragAndDropActivity"></activity>
+        <activity android:name=".DragAndDropActivity" />
+        <activity android:name=".FavoritesActivity"></activity>
     </application>
 
 </manifest>
