@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,9 @@ import android.widget.Toast;
 public class Frag1 extends Fragment {
 
     private WebView webView;
+    private FloatingActionButton FABhistory;
+    private FloatingActionButton FABfavorite;
+    private FloatingActionButton FABeureka;
 
     public Frag1() {
         // Required empty public constructor
@@ -35,12 +39,17 @@ public class Frag1 extends Fragment {
 
         initWidgets(view);
         setupWebView();
+        setupListeners();
 
         return view;
     }
 
+
     private void initWidgets(View view) {
         webView = (WebView) view.findViewById(R.id.webView);
+        FABhistory = (FloatingActionButton) view.findViewById(R.id.FABhistory);
+        FABfavorite = (FloatingActionButton) view.findViewById(R.id.FABfavorite);
+        FABeureka = (FloatingActionButton) view.findViewById(R.id.FABeureka);
     }
 
     private void setupWebView() {
@@ -68,6 +77,30 @@ public class Frag1 extends Fragment {
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getGeologija_clanci())) {
             webView.loadUrl(clanciHelperPOJO.getClanci_geologija()[0]);
         }
+    }
+
+    private void setupListeners() {
+        FABhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HistoryDialog historyDialog = new HistoryDialog();
+                historyDialog.show(getActivity().getFragmentManager(), null);
+            }
+        });
+        FABfavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FavoriteDialog favoriteDialog = new FavoriteDialog();
+                favoriteDialog.show(getActivity().getFragmentManager(), null);
+            }
+        });
+        FABeureka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EurekaDialog eurekaDialog = new EurekaDialog();
+                eurekaDialog.show(getActivity().getFragmentManager(), null);
+            }
+        });
     }
 
     private String mTitle = "";
