@@ -5,19 +5,25 @@ package com.kesteli.filip.sciencebrowser1;
  */
 public class ClanciHelperPOJO {
 
-    private static final String MyClanakPREFERENCE = "clanak";
+    private static final String MyClanakPREFERENCE = "clanak"; //ne koristim vise
 
     public static String getMyClanakPREFERENCE() {
         return MyClanakPREFERENCE;
     }
 
-    private static final String MyPREFERENCES = "MyPrefs";
+    private static final String MyPREFERENCES = "MyPrefs"; //ne koristim vise
 
     public static String getWebStranicePREFERENCES() {
         return webStranicePREFERENCES;
     }
 
     private static final String webStranicePREFERENCES = "PreferencaWebStranice";
+
+    public static String getSitePREFERENCES() {
+        return sitePREFERENCES;
+    }
+
+    private static final String sitePREFERENCES = "PreferencaWebStranice";
 
     public static String getMyPREFERENCES() {
         return MyPREFERENCES;

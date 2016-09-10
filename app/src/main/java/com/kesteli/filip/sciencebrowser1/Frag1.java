@@ -103,8 +103,11 @@ public class Frag1 extends Fragment {
         });
     }
 
-    private String mTitle = "";
-    private String mUrl = "";
+    private String mTitle = null;
+    private String mUrl;
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     private class MyBrowser extends WebViewClient {
         @Override
@@ -117,11 +120,20 @@ public class Frag1 extends Fragment {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             mUrl = view.getUrl();
             mTitle = view.getTitle();
-//            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+            //TODO: Povezati bazu ovdje -> Znaci uzmem current url mUrl i ako klikne na history i ok -> add stranicu u bazu
+            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+            Log.d("filip:", mUrl);
+
+            //Ovo je po pretpostavci ujedno i zadnji editani sharedPreferences
+            sharedPreferences = getActivity().getSharedPreferences(ClanciHelperPOJO.getSitePREFERENCES(), Context.MODE_PRIVATE);
+            editor = sharedPreferences.edit();
+            if (mUrl != null) {
+                Log.d("kkk", mUrl);
+            }
+            editor.putString(ClanciHelperPOJO.getSitePREFERENCES(), mUrl);
+            editor.commit();
         }
     }
 }
-
-
 
 

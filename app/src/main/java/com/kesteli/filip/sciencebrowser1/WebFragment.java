@@ -15,8 +15,9 @@ import android.widget.Toast;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Samo pomocni fragment koji se ne koristi
  */
+// TODO: Izbrisati ovaj fragment, zamijenili su ga Frag1, Frag2,..., Frag10
 public class WebFragment extends Fragment {
 
     private WebView webView;
@@ -106,7 +107,8 @@ public class WebFragment extends Fragment {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             mUrl = view.getUrl();
             mTitle = view.getTitle();
-//            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+            Log.d("filip:", mUrl);
         }
     }
 }
