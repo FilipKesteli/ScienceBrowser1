@@ -36,7 +36,7 @@
             android:layout_toRightOf="@id/znanost_image"
             android:text="Znanost"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="21sp" />
 
     </android.support.design.widget.CoordinatorLayout>
 

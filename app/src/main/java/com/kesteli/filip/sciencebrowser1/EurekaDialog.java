@@ -6,8 +6,11 @@ package com.kesteli.filip.sciencebrowser1;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * Created by programer on 16.5.2016..
@@ -25,7 +28,21 @@ public class EurekaDialog extends DialogFragment {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                getActivity().finish();
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(ClanciHelperPOJO.getSitePREFERENCES(), Context.MODE_PRIVATE);
+                String site = sharedPreferences.getString(ClanciHelperPOJO.getSitePREFERENCES(), null);
+
+                DatabaseHandler databaseHandler = new DatabaseHandler(getActivity());
+                Log.d("Insert: ", "Inserting ..");
+                databaseHandler.addStranica(new Stranica(site, 0, 0, 1));
+                Stranica str = databaseHandler.getStranicaPremaSite(site);
+                String log3 = "Id: " + str.get_id()
+                        + " ,Site: " + str.get_site()
+                        + " ,History: "
+                        + str.get_history()
+                        + " ,Favorite: " + str.get_favorite()
+                        + " ,Eureka: " + str.get_eureka();
+                // Writing Contacts to log
+                Log.d("LALI: ", log3);
             }
         });
 

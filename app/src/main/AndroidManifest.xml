@@ -24,18 +24,20 @@
         </activity>
         <activity
             android:name=".HistoryActivity"
-            android:label="@string/title_activity_history"
+            android:label="HISTORY"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WebActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DragAndDropActivity"
-            android:screenOrientation="portrait" />
+            android:name=".EurekaActivity"
+            android:label="EUREKA"
+            android:theme="@style/AppTheme" />
         <activity
-            android:name=".FavoritesActivity"
-            android:screenOrientation="portrait"></activity>
+            android:name=".FavoriteActivity"
+            android:label="FAVORITE"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

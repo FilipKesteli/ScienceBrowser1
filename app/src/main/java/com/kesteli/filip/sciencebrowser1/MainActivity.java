@@ -124,11 +124,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_geologija) {
             znanost = ClanciHelperPOJO.getGeologija_clanci();
         } else if (id == R.id.nav_eureka) {
-            Intent intentEureka = new Intent(MainActivity.this, DragAndDropActivity.class);
+            Intent intentEureka = new Intent(MainActivity.this, EurekaActivity.class);
             startActivity(intentEureka);
         } else if (id == R.id.nav_favorite) {
-            Intent intentFavorites = new Intent(MainActivity.this, FavoritesActivity.class);
-            startActivity(intentFavorites);
+            Intent intentFavorite = new Intent(MainActivity.this, FavoriteActivity.class);
+            startActivity(intentFavorite);
         } else if (id == R.id.nav_history) {
             Intent intentHistory = new Intent(MainActivity.this, HistoryActivity.class);
             startActivity(intentHistory);

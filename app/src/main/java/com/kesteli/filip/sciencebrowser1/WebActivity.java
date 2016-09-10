@@ -353,11 +353,11 @@ public class WebActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.action_favorite:
-                Intent intent2 = new Intent(WebActivity.this, FavoritesActivity.class);
+                Intent intent2 = new Intent(WebActivity.this, FavoriteActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.action_eureka:
-                Intent intent3 = new Intent(WebActivity.this, DragAndDropActivity.class);
+                Intent intent3 = new Intent(WebActivity.this, EurekaActivity.class);
                 startActivity(intent3);
                 break;
             //FACTORY metoda -> odmah iskoristimo vec postojecu ugradenu sprancu za ProgressDialog objekt:

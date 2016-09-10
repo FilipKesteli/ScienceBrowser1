@@ -71,14 +71,14 @@ public class ClanciHelperPOJO {
     }
 
     private String[] titles = {
-            "Fizika",
-            "Kemija",
-            "Matematika",
-            "Tehnika",
-            "Medicina",
-            "Biologija",
-            "Astronomija",
-            "Geologija"
+            "Physics",
+            "Chemistry",
+            "Mathematics",
+            "Technology",
+            "Medicine",
+            "Biology",
+            "Astronomy",
+            "Geology"
     };
 
     public String[] getTitles() {
