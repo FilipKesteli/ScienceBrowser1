@@ -1,5 +1,7 @@
 package com.kesteli.filip.sciencebrowser1;
 
+import android.graphics.Color;
+
 /**
  * Created by Filip on 4.9.2016..
  */
@@ -90,7 +92,7 @@ public class ClanciHelperPOJO {
     }
 
     private String[] clanci_fizika = {
-            "http://phys.org/physics-news/",
+            "https://www.sciencedaily.com/news/matter_energy/physics/",
             "https://www.sciencedaily.com/news/matter_energy/physics/",
             "http://physicsworld.com/cws/channel/news",
             "http://www.physics.org/news.asp",
@@ -106,7 +108,7 @@ public class ClanciHelperPOJO {
 
     private String[] clanci_kemija = {
             "http://www.scientificamerican.com/chemistry/",
-            "http://phys.org/chemistry-news/",
+            "http://www.scientificamerican.com/chemistry/",
             "http://www.iflscience.com/chemistry/",
             "https://www.sciencedaily.com/news/matter_energy/chemistry/",
             "http://www.sciencemag.org/category/chemistry",
@@ -219,6 +221,25 @@ public class ClanciHelperPOJO {
             R.drawable.ic_star_white_24dp,
             R.drawable.ic_filter_hdr_white_24dp
     };
+
+    private int[] colorsMain = {
+            Color.CYAN,
+            Color.CYAN,
+            Color.YELLOW,
+            Color.YELLOW,
+            Color.RED,
+            Color.RED,
+            Color.GREEN,
+            Color.GREEN
+    };
+
+    public int[] getColorsMain() {
+        return colorsMain;
+    }
+
+    public void setColorsMain(int[] colorsMain) {
+        this.colorsMain = colorsMain;
+    }
 
     public String[] getClanci_fizika() {
         return clanci_fizika;

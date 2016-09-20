@@ -7,4 +7,22 @@
         android:orderInCategory="100"
         android:title="About app"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_history"
+        android:icon="@drawable/ic_history_white_24dp"
+        android:title="History"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_favorite_white_24dp"
+        android:title="Favorite"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_eureka"
+        android:icon="@drawable/ic_wb_sunny_white_24dp"
+        android:title="Eureka"
+        app:showAsAction="always" />
 </menu>

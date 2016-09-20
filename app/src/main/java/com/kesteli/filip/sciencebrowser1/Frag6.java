@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,9 @@ import android.widget.Toast;
 public class Frag6 extends Fragment {
 
     private WebView webView;
+    private FloatingActionButton FABhistory;
+    private FloatingActionButton FABfavorite;
+    private FloatingActionButton FABeureka;
 
     public Frag6() {
         // Required empty public constructor
@@ -35,12 +39,17 @@ public class Frag6 extends Fragment {
 
         initWidgets(view);
         setupWebView();
+        setupListeners();
 
         return view;
     }
 
+
     private void initWidgets(View view) {
         webView = (WebView) view.findViewById(R.id.webView);
+        FABhistory = (FloatingActionButton) view.findViewById(R.id.FABhistory);
+        FABfavorite = (FloatingActionButton) view.findViewById(R.id.FABfavorite);
+        FABeureka = (FloatingActionButton) view.findViewById(R.id.FABeureka);
     }
 
     private void setupWebView() {
@@ -70,8 +79,35 @@ public class Frag6 extends Fragment {
         }
     }
 
-    private String mTitle = "";
-    private String mUrl = "";
+    private void setupListeners() {
+        FABhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HistoryDialog historyDialog = new HistoryDialog();
+                historyDialog.show(getActivity().getFragmentManager(), null);
+            }
+        });
+        FABfavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FavoriteDialog favoriteDialog = new FavoriteDialog();
+                favoriteDialog.show(getActivity().getFragmentManager(), null);
+            }
+        });
+        FABeureka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EurekaDialog eurekaDialog = new EurekaDialog();
+                eurekaDialog.show(getActivity().getFragmentManager(), null);
+            }
+        });
+    }
+
+    private String mTitle = null;
+    private String mUrl;
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     private class MyBrowser extends WebViewClient {
         @Override
@@ -84,11 +120,20 @@ public class Frag6 extends Fragment {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             mUrl = view.getUrl();
             mTitle = view.getTitle();
+            //TODO: Povezati bazu ovdje -> Znaci uzmem current url mUrl i ako klikne na history i ok -> add stranicu u bazu
 //            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+            Log.d("filip:", mUrl);
+
+            //Ovo je po pretpostavci ujedno i zadnji editani sharedPreferences
+            sharedPreferences = getActivity().getSharedPreferences(ClanciHelperPOJO.getSitePREFERENCES(), Context.MODE_PRIVATE);
+            editor = sharedPreferences.edit();
+            if (mUrl != null) {
+                Log.d("kkk", mUrl);
+            }
+            editor.putString(ClanciHelperPOJO.getSitePREFERENCES(), mUrl);
+            editor.commit();
         }
     }
 }
-
-
 
 

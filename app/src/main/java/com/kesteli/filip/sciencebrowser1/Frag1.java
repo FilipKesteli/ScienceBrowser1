@@ -121,7 +121,7 @@ public class Frag1 extends Fragment {
             mUrl = view.getUrl();
             mTitle = view.getTitle();
             //TODO: Povezati bazu ovdje -> Znaci uzmem current url mUrl i ako klikne na history i ok -> add stranicu u bazu
-            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), mUrl, Toast.LENGTH_SHORT).show();
             Log.d("filip:", mUrl);
 
             //Ovo je po pretpostavci ujedno i zadnji editani sharedPreferences
