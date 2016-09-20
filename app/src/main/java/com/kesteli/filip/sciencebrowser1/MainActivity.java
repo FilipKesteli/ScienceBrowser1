@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -75,29 +76,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_info) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -144,6 +122,41 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_info) {
+            return true;
+        } else if (id == R.id.action_eureka) {
+            Intent intent = new Intent(MainActivity.this, EurekaActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_favorite) {
+            Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_history) {
+            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
@@ -180,6 +193,7 @@ public class MainActivity extends AppCompatActivity
             holder.znanostTitle.setText(clanciHelperPOJO.getTitles()[position]);
 //            holder.znanostImage.setImageResource(images[position]);
             holder.znanostImage.setImageResource(clanciHelperPOJO.getImages()[position]);
+            holder.cardView.setCardBackgroundColor(clanciHelperPOJO.getColorsMain()[position]);
         }
 
         @Override
@@ -191,11 +205,13 @@ public class MainActivity extends AppCompatActivity
 
             public ImageView znanostImage;
             public TextView znanostTitle;
+            public CardView cardView;
 
             public ViewHolder(View itemView) {
                 super(itemView);
                 znanostImage = (ImageView) itemView.findViewById(R.id.znanost_image);
                 znanostTitle = (TextView) itemView.findViewById(R.id.znanost_title);
+                cardView = (CardView) itemView.findViewById(R.id.card_view);
 
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
