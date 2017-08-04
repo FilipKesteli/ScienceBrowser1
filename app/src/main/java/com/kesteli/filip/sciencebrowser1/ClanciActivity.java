@@ -3,21 +3,21 @@ package com.kesteli.filip.sciencebrowser1;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,8 +27,7 @@ import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
 import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
 import com.kesteli.filip.sciencebrowser1.web.WebActivity;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class ClanciActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ClanciHelperPOJO clanciHelperPOJO = new ClanciHelperPOJO();
 
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         sharedPreferences = getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        Intent intent = new Intent(MainActivity.this, WebActivity.class);
+        Intent intent = new Intent(ClanciActivity.this, WebActivity.class);
         String znanost = null;
         if (id == R.id.nav_fizika) {
             znanost = ClanciHelperPOJO.getFizika_clanci();
@@ -106,13 +105,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_geologija) {
             znanost = ClanciHelperPOJO.getGeologija_clanci();
         } else if (id == R.id.nav_eureka) {
-            Intent intentEureka = new Intent(MainActivity.this, EurekaActivity.class);
+            Intent intentEureka = new Intent(ClanciActivity.this, EurekaActivity.class);
             startActivity(intentEureka);
         } else if (id == R.id.nav_favorite) {
-            Intent intentFavorite = new Intent(MainActivity.this, FavoriteActivity.class);
+            Intent intentFavorite = new Intent(ClanciActivity.this, FavoriteActivity.class);
             startActivity(intentFavorite);
         } else if (id == R.id.nav_history) {
-            Intent intentHistory = new Intent(MainActivity.this, HistoryActivity.class);
+            Intent intentHistory = new Intent(ClanciActivity.this, HistoryActivity.class);
             startActivity(intentHistory);
         }
 
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -144,15 +144,15 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_info) {
             return true;
         } else if (id == R.id.action_eureka) {
-            Intent intent = new Intent(MainActivity.this, EurekaActivity.class);
+            Intent intent = new Intent(ClanciActivity.this, EurekaActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_favorite) {
-            Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
+            Intent intent = new Intent(ClanciActivity.this, FavoriteActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_history) {
-            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            Intent intent = new Intent(ClanciActivity.this, HistoryActivity.class);
             startActivity(intent);
             return true;
         }
@@ -168,14 +168,13 @@ public class MainActivity extends AppCompatActivity
 
     private void setupRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
+        gridLayoutManager = new GridLayoutManager(ClanciActivity.this, 2);
         layoutManager = new LinearLayoutManager(this);
 //        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setLayoutManager(gridLayoutManager);
         adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
     }
-
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -191,17 +190,17 @@ public class MainActivity extends AppCompatActivity
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerAdapter.ViewHolder holder, int position) {
 //            holder.znanostTitle.setText(titles[position]);
-            holder.znanostTitle.setText(clanciHelperPOJO.getIdejeTitles()[position]);
+            holder.znanostTitle.setText(clanciHelperPOJO.getTitles()[position]);
 //            holder.znanostImage.setImageResource(images[position]);
-            holder.znanostImage.setImageResource(clanciHelperPOJO.getIdejeImages()[position]);
-            holder.cardView.setCardBackgroundColor(clanciHelperPOJO.getIdejeColors()[position]);
+            holder.znanostImage.setImageResource(clanciHelperPOJO.getImages()[position]);
+            holder.cardView.setCardBackgroundColor(clanciHelperPOJO.getColorsMain()[position]);
         }
 
         @Override
         public int getItemCount() {
-            return clanciHelperPOJO.getIdejeTitles().length;
+            return clanciHelperPOJO.getTitles().length;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -211,7 +210,6 @@ public class MainActivity extends AppCompatActivity
             public CardView cardView;
 
             public ViewHolder(View itemView) {
-
                 super(itemView);
                 znanostImage = (ImageView) itemView.findViewById(R.id.znanost_image);
                 znanostTitle = (TextView) itemView.findViewById(R.id.znanost_title);
@@ -225,7 +223,7 @@ public class MainActivity extends AppCompatActivity
                         sharedPreferences = getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
                         editor = sharedPreferences.edit();
 
-                        Intent intent = new Intent(MainActivity.this, WebActivity.class);
+                        Intent intent = new Intent(ClanciActivity.this, WebActivity.class);
                         if (position == 0) {
                             editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getFizika_clanci());
                             editor.commit();
@@ -250,6 +248,14 @@ public class MainActivity extends AppCompatActivity
                             editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getBiologija_clanci());
                             editor.commit();
                             intent.putExtra(ClanciHelperPOJO.getBiologija_clanci(), ClanciHelperPOJO.getBiologija_clanci());
+                        } else if (position == 6) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getAstronomija_clanci());
+                            editor.commit();
+                            intent.putExtra(ClanciHelperPOJO.getAstronomija_clanci(), ClanciHelperPOJO.getAstronomija_clanci());
+                        } else if (position == 7) {
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getGeologija_clanci());
+                            editor.commit();
+                            intent.putExtra(ClanciHelperPOJO.getGeologija_clanci(), ClanciHelperPOJO.getGeologija_clanci());
                         }
                         startActivity(intent);
                     }
@@ -258,4 +264,3 @@ public class MainActivity extends AppCompatActivity
         }
     }
 }
-

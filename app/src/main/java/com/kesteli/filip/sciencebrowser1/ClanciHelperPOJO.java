@@ -40,6 +40,93 @@ public class ClanciHelperPOJO {
     private static final String astronomija_clanci = "astronomija_clanci";
     private static final String geologija_clanci = "geologija_clanci";
 
+    private static final String reality_check = "reality_check";
+    private static final String education_express = "education_express";
+    private static final String kz_inicijativa = "kz_inicijativa";
+    private static final String smart_city = "smart_city";
+    private static final String apsolute_democracy = "apsolute_democracy";
+    private static final String motivator = "motivator";
+
+    private String[] titles = {
+            "Physics",
+            "Chemistry",
+            "Mathematics",
+            "Technology",
+            "Medicine",
+            "Biology",
+            "Astronomy",
+            "Geology",
+            "Reality check",
+            "Education express"
+    };
+
+    private int[] images = {
+            R.drawable.ic_wifi_tethering_white_24dp,
+            R.drawable.ic_local_drink_white_24dp,
+            R.drawable.ic_all_inclusive_white_24dp,
+            R.drawable.ic_directions_boat_white_24dp,
+            R.drawable.ic_local_hospital_white_24dp,
+            R.drawable.ic_local_florist_white_24dp,
+            R.drawable.ic_star_white_24dp,
+            R.drawable.ic_filter_hdr_white_24dp,
+            R.drawable.ic_filter_hdr_white_24dp,
+            R.drawable.ic_filter_hdr_white_24dp
+    };
+
+    private int[] colorsMain = {
+            Color.CYAN,
+            Color.CYAN,
+            Color.YELLOW,
+            Color.YELLOW,
+            Color.RED,
+            Color.RED,
+            Color.GREEN,
+            Color.GREEN,
+            Color.CYAN,
+            Color.CYAN
+    };
+
+    /**
+     *
+     * ********************************************************************************************
+     */
+
+    private String[] idejeTitles = {
+            "Education express",
+            "Reality checker",
+            "KŽ Inicijativa",
+            "Smart city",
+            "Apsolute democracy",
+            "Motivator"
+    };
+
+    private int[] idejeImages = {
+            R.drawable.ic_wifi_tethering_white_24dp,
+            R.drawable.ic_local_drink_white_24dp,
+            R.drawable.ic_all_inclusive_white_24dp,
+            R.drawable.ic_directions_boat_white_24dp,
+            R.drawable.ic_local_hospital_white_24dp,
+            R.drawable.ic_local_florist_white_24dp,
+    };
+
+    private int[] idejeColors = {
+            Color.CYAN,
+            Color.CYAN,
+            Color.YELLOW,
+            Color.YELLOW,
+            Color.RED,
+            Color.RED,
+    };
+
+    /**
+     *
+     * ********************************************************************************************
+     */
+
+    public static String getReality_check() {
+        return reality_check;
+    }
+
     public static String getFizika_clanci() {
         return fizika_clanci;
     }
@@ -72,23 +159,40 @@ public class ClanciHelperPOJO {
         return geologija_clanci;
     }
 
-    private String[] titles = {
-            "Physics",
-            "Chemistry",
-            "Mathematics",
-            "Technology",
-            "Medicine",
-            "Biology",
-            "Astronomy",
-            "Geology"
-    };
-
     public String[] getTitles() {
         return titles;
     }
 
-    public void setTitles(String[] titles) {
-        this.titles = titles;
+    public static String getEducation_express() {
+        return education_express;
+    }
+
+    public static String getKz_inicijativa() {
+        return kz_inicijativa;
+    }
+
+    public static String getSmart_city() {
+        return smart_city;
+    }
+
+    public static String getApsolute_democracy() {
+        return apsolute_democracy;
+    }
+
+    public static String getMotivator() {
+        return motivator;
+    }
+
+    public String[] getIdejeTitles() {
+        return idejeTitles;
+    }
+
+    public int[] getIdejeImages() {
+        return idejeImages;
+    }
+
+    public int[] getIdejeColors() {
+        return idejeColors;
     }
 
     private String[] clanci_fizika = {
@@ -210,28 +314,6 @@ public class ClanciHelperPOJO {
     };
 
     private String[] geologija = {"sci daily", "geology", "sci news", "the guardian", "geology.alltop", "nature", "live sci", "geo society", "telegraph", "independent"};
-
-    private int[] images = {
-            R.drawable.ic_wifi_tethering_white_24dp,
-            R.drawable.ic_local_drink_white_24dp,
-            R.drawable.ic_all_inclusive_white_24dp,
-            R.drawable.ic_directions_boat_white_24dp,
-            R.drawable.ic_local_hospital_white_24dp,
-            R.drawable.ic_local_florist_white_24dp,
-            R.drawable.ic_star_white_24dp,
-            R.drawable.ic_filter_hdr_white_24dp
-    };
-
-    private int[] colorsMain = {
-            Color.CYAN,
-            Color.CYAN,
-            Color.YELLOW,
-            Color.YELLOW,
-            Color.RED,
-            Color.RED,
-            Color.GREEN,
-            Color.GREEN
-    };
 
     public int[] getColorsMain() {
         return colorsMain;

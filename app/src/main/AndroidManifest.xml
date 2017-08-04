@@ -39,7 +39,8 @@
             android:name=".history.FavoriteActivity"
             android:label="FAVORITE"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ClanciActivity"></activity>
     </application>
 
 </manifest>
