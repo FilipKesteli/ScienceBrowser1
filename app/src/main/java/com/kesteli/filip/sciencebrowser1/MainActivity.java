@@ -22,6 +22,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kesteli.filip.sciencebrowser1.aplikacije.ClanciActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.DemocracyActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.DonationActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.EducationActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.KZInicijativaActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.MotivatorActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.RealityActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.ScienceActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.SmartCityActivity;
 import com.kesteli.filip.sciencebrowser1.history.EurekaActivity;
 import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
 import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
@@ -225,33 +234,35 @@ public class MainActivity extends AppCompatActivity
                         sharedPreferences = getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
                         editor = sharedPreferences.edit();
 
-                        Intent intent = new Intent(MainActivity.this, WebActivity.class);
+
+
+
+
                         if (position == 0) {
-                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getFizika_clanci());
-                            editor.commit();
-                            intent.putExtra(ClanciHelperPOJO.getFizika_clanci(), ClanciHelperPOJO.getFizika_clanci());
+                            Intent intentEducation = new Intent(MainActivity.this, EducationActivity.class);
+                            startActivity(intentEducation);
                         } else if (position == 1) {
-                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getKemija_clanci());
-                            editor.commit();
-                            intent.putExtra(ClanciHelperPOJO.getKemija_clanci(), ClanciHelperPOJO.getKemija_clanci());
+                            Intent intentDemocracy = new Intent(MainActivity.this, DemocracyActivity.class);
+                            startActivity(intentDemocracy);
                         } else if (position == 2) {
-                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getMatematika_clanci());
-                            editor.commit();
-                            intent.putExtra(ClanciHelperPOJO.getMatematika_clanci(), ClanciHelperPOJO.getMatematika_clanci());
+                            Intent intentClanci = new Intent(MainActivity.this, ClanciActivity.class);
+                            startActivity(intentClanci);
                         } else if (position == 3) {
-                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getTehnika_clanci());
-                            editor.commit();
-                            intent.putExtra(ClanciHelperPOJO.getTehnika_clanci(), ClanciHelperPOJO.getTehnika_clanci());
+                            Intent intentDonation = new Intent(MainActivity.this, DonationActivity.class);
+                            startActivity(intentDonation);
                         } else if (position == 4) {
-                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getMedicina_clanci());
-                            editor.commit();
-                            intent.putExtra(ClanciHelperPOJO.getMedicina_clanci(), ClanciHelperPOJO.getMedicina_clanci());
+                            Intent intentKZInicijativa = new Intent(MainActivity.this, KZInicijativaActivity.class);
+                            startActivity(intentKZInicijativa);
                         } else if (position == 5) {
-                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getBiologija_clanci());
-                            editor.commit();
-                            intent.putExtra(ClanciHelperPOJO.getBiologija_clanci(), ClanciHelperPOJO.getBiologija_clanci());
+                            Intent intentMotivator = new Intent(MainActivity.this, MotivatorActivity.class);
+                            startActivity(intentMotivator);
+                        } else if (position == 6) {
+                            Intent intentReality = new Intent(MainActivity.this, RealityActivity.class);
+                            startActivity(intentReality);
+                        } else if (position == 7) {
+                            Intent intentSmartCity = new Intent(MainActivity.this, SmartCityActivity.class);
+                            startActivity(intentSmartCity);
                         }
-                        startActivity(intent);
                     }
                 });
             }

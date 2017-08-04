@@ -40,7 +40,15 @@
             android:label="FAVORITE"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ClanciActivity"></activity>
+        <activity android:name=".aplikacije.ClanciActivity" />
+        <activity android:name=".aplikacije.RealityActivity" />
+        <activity android:name=".aplikacije.EducationActivity" />
+        <activity android:name=".aplikacije.KZInicijativaActivity" />
+        <activity android:name=".aplikacije.ScienceActivity" />
+        <activity android:name=".aplikacije.MotivatorActivity" />
+        <activity android:name=".aplikacije.DonationActivity" />
+        <activity android:name=".aplikacije.SmartCityActivity" />
+        <activity android:name=".aplikacije.DemocracyActivity"></activity>
     </application>
 
 </manifest>

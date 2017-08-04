@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1;
+package com.kesteli.filip.sciencebrowser1.aplikacije;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +22,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
+import com.kesteli.filip.sciencebrowser1.R;
 import com.kesteli.filip.sciencebrowser1.history.EurekaActivity;
 import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
 import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
@@ -41,10 +43,21 @@ public class ClanciActivity extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_main);
 
         initWidgets();
+        handleIntent();
         setupToolbar();
         setupHamburgerIcon();
         setupNavigationView();
         setupRecyclerView();
+    }
+
+    private void handleIntent() {
+        Intent intent = getIntent();
+        /**
+         * if (intent.hasExtra(MainActivity.PARAMETER_NAME)) {
+            String message = intent.getStringExtra(MainActivity.PARAMETER_NAME);
+            etReceivedMessage.setText(message);
+        }
+         */
     }
 
     private void initWidgets() {

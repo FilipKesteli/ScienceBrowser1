@@ -93,11 +93,13 @@ public class ClanciHelperPOJO {
 
     private String[] idejeTitles = {
             "Education express",
-            "Reality checker",
+            "Absolute democracy",
+            "Znanstveni časopisi",
+            "Donacije",
             "KŽ Inicijativa",
-            "Smart city",
-            "Apsolute democracy",
-            "Motivator"
+            "Motivator",
+            "Reality checker",
+            "Smart city"
     };
 
     private int[] idejeImages = {
@@ -107,6 +109,8 @@ public class ClanciHelperPOJO {
             R.drawable.ic_directions_boat_white_24dp,
             R.drawable.ic_local_hospital_white_24dp,
             R.drawable.ic_local_florist_white_24dp,
+            R.drawable.ic_local_florist_white_24dp,
+            R.drawable.ic_local_florist_white_24dp
     };
 
     private int[] idejeColors = {
@@ -116,6 +120,8 @@ public class ClanciHelperPOJO {
             Color.YELLOW,
             Color.RED,
             Color.RED,
+            Color.GREEN,
+            Color.GREEN
     };
 
     /**
