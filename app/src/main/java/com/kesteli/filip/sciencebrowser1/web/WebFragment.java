@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1;
+package com.kesteli.filip.sciencebrowser1.web;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
+import com.kesteli.filip.sciencebrowser1.R;
 
 
 /**

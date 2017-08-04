@@ -23,20 +23,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WebActivity"
+            android:name=".web.WebActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HistoryActivity"
+            android:name=".history.HistoryActivity"
             android:label="HISTORY"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EurekaActivity"
+            android:name=".history.EurekaActivity"
             android:label="EUREKA"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".FavoriteActivity"
+            android:name=".history.FavoriteActivity"
             android:label="FAVORITE"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"></activity>

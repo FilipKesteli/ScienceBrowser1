@@ -1,10 +1,6 @@
-package com.kesteli.filip.sciencebrowser1;
+package com.kesteli.filip.sciencebrowser1.web;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,17 +9,28 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.Toast;
+
+import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
+import com.kesteli.filip.sciencebrowser1.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.R;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag1;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag10;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag2;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag3;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag4;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag5;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag6;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag7;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag8;
+import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag9;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class WebActivity extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.kesteli.filip.sciencebrowser1.EurekaActivity"
+    tools:context="com.kesteli.filip.sciencebrowser1.history.EurekaActivity"
     tools:showIn="@layout/activity_eureka">
 
     <android.support.v7.widget.RecyclerView

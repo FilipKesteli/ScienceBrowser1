@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.kesteli.filip.sciencebrowser1.WebFragment">
+    tools:context="com.kesteli.filip.sciencebrowser1.web.WebFragment">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"

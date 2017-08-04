@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.kesteli.filip.sciencebrowser1.bazapodataka.Stranica;
+
 import java.util.ArrayList;
 import java.util.List;
 

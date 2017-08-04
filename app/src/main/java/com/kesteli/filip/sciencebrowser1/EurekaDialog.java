@@ -12,6 +12,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.kesteli.filip.sciencebrowser1.bazapodataka.Stranica;
+
 /**
  * Created by programer on 16.5.2016..
  */

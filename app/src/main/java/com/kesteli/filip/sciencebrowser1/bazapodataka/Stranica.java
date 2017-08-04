@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1;
+package com.kesteli.filip.sciencebrowser1.bazapodataka;
 
 /**
  * Created by Filip on 9.9.2016..

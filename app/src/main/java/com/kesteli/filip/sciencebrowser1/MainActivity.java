@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +21,11 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.kesteli.filip.sciencebrowser1.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.web.WebActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

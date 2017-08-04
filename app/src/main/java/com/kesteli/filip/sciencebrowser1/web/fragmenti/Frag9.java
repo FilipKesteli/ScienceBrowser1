@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1;
+package com.kesteli.filip.sciencebrowser1.web.fragmenti;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,20 +12,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
+
+import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
+import com.kesteli.filip.sciencebrowser1.EurekaDialog;
+import com.kesteli.filip.sciencebrowser1.FavoriteDialog;
+import com.kesteli.filip.sciencebrowser1.HistoryDialog;
+import com.kesteli.filip.sciencebrowser1.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Frag7 extends Fragment {
+public class Frag9 extends Fragment {
 
     private WebView webView;
     private FloatingActionButton FABhistory;
     private FloatingActionButton FABfavorite;
     private FloatingActionButton FABeureka;
 
-    public Frag7() {
+    public Frag9() {
         // Required empty public constructor
     }
 
@@ -35,7 +40,7 @@ public class Frag7 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_frag7, container, false);
+        View view = inflater.inflate(R.layout.fragment_frag9, container, false);
 
         initWidgets(view);
         setupWebView();
@@ -61,21 +66,21 @@ public class Frag7 extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
         String restoredTextZnanost = sharedPreferences.getString(ClanciHelperPOJO.getWebStranicePREFERENCES(), null);
         if (restoredTextZnanost.equals(ClanciHelperPOJO.getFizika_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_fizika()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_fizika()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getKemija_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_kemija()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_kemija()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getMatematika_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_matematika()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_matematika()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getTehnika_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_tehnika()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_tehnika()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getMedicina_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_medicina()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_medicina()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getBiologija_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_biologija()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_biologija()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getAstronomija_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_astronomija()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_astronomija()[8]);
         } else if (restoredTextZnanost.equals(ClanciHelperPOJO.getGeologija_clanci())) {
-            webView.loadUrl(clanciHelperPOJO.getClanci_geologija()[6]);
+            webView.loadUrl(clanciHelperPOJO.getClanci_geologija()[8]);
         }
     }
 

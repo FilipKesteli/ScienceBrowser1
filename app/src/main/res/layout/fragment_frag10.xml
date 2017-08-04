@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.kesteli.filip.sciencebrowser1.Frag10">
+    tools:context=".web.fragmenti.Frag10">
 
     <WebView
         android:id="@+id/webView"
