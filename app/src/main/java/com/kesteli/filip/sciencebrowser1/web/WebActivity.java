@@ -59,6 +59,11 @@ public class WebActivity extends AppCompatActivity {
         setupFragments();
     }
 
+    /**
+     * Kad stisnem recimo chemistry, jedini nacin da znam da je to chemistry je da posaljem intentExtra!
+     * Recimo kod ostalih activityja to nije toliko bitno (Education, RealityCheck, Motivator, itd.)
+     */
+
     private void setupFragments() {
         Intent intent = getIntent();
         if (intent.hasExtra(ClanciHelperPOJO.getFizika_clanci())) {

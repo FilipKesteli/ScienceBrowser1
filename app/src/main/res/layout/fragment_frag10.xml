@@ -20,7 +20,7 @@
         android:background="@color/white">
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/FABeureka"
+            android:id="@+id/FABeurekaEdu"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom|end"
@@ -29,7 +29,7 @@
             app:backgroundTint="@color/yellow_500" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/FABfavorite"
+            android:id="@+id/FABfavoriteEdu"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom|center"
@@ -38,7 +38,7 @@
             app:backgroundTint="@color/pink_A400" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/FABhistory"
+            android:id="@+id/FABhistoryEdu"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="bottom|start"

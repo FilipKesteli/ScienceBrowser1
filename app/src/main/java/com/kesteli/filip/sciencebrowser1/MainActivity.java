@@ -240,6 +240,9 @@ public class MainActivity extends AppCompatActivity
 
                         if (position == 0) {
                             Intent intentEducation = new Intent(MainActivity.this, EducationActivity.class);
+                            editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getEducation_express());
+                            editor.commit();
+                            intentEducation.putExtra(ClanciHelperPOJO.getEducation_express(), ClanciHelperPOJO.getEducation_express());
                             startActivity(intentEducation);
                         } else if (position == 1) {
                             Intent intentDemocracy = new Intent(MainActivity.this, DemocracyActivity.class);

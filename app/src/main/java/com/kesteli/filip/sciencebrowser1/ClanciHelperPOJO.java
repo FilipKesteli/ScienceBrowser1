@@ -7,6 +7,10 @@ import android.graphics.Color;
  */
 public class ClanciHelperPOJO {
 
+    /**
+     * *******************************************************************************************
+     */
+
     private static final String MyClanakPREFERENCE = "clanak"; //ne koristim vise
 
     public static String getMyClanakPREFERENCE() {
@@ -31,6 +35,10 @@ public class ClanciHelperPOJO {
         return MyPREFERENCES;
     }
 
+    /**
+     * *******************************************************************************************
+     */
+
     private static final String fizika_clanci = "fizika_clanci";
     private static final String kemija_clanci = "kemija_clanci";
     private static final String matematika_clanci = "matematika_clanci";
@@ -46,6 +54,13 @@ public class ClanciHelperPOJO {
     private static final String smart_city = "smart_city";
     private static final String apsolute_democracy = "apsolute_democracy";
     private static final String motivator = "motivator";
+    private static final String clanci = "clanci";
+    private static final String donation = "donation";
+
+    /**
+     * *******************************************************************************************
+     */
+
 
     private String[] titles = {
             "Physics",
@@ -187,6 +202,14 @@ public class ClanciHelperPOJO {
 
     public static String getMotivator() {
         return motivator;
+    }
+
+    public static String getClanci() {
+        return clanci;
+    }
+
+    public static String getDonation() {
+        return donation;
     }
 
     public String[] getIdejeTitles() {

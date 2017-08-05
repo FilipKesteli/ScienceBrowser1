@@ -34,7 +34,6 @@ public class Frag1 extends Fragment {
         // Required empty public constructor
     }
 
-
     private ClanciHelperPOJO clanciHelperPOJO = new ClanciHelperPOJO();
 
     @Override
@@ -52,9 +51,9 @@ public class Frag1 extends Fragment {
 
     private void initWidgets(View view) {
         webView = (WebView) view.findViewById(R.id.webView);
-        FABhistory = (FloatingActionButton) view.findViewById(R.id.FABhistory);
-        FABfavorite = (FloatingActionButton) view.findViewById(R.id.FABfavorite);
-        FABeureka = (FloatingActionButton) view.findViewById(R.id.FABeureka);
+        FABhistory = (FloatingActionButton) view.findViewById(R.id.FABhistoryEdu);
+        FABfavorite = (FloatingActionButton) view.findViewById(R.id.FABfavoriteEdu);
+        FABeureka = (FloatingActionButton) view.findViewById(R.id.FABeurekaEdu);
     }
 
     private void setupWebView() {
