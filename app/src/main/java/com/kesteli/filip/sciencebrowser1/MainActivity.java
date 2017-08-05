@@ -234,10 +234,6 @@ public class MainActivity extends AppCompatActivity
                         sharedPreferences = getSharedPreferences(ClanciHelperPOJO.getWebStranicePREFERENCES(), Context.MODE_PRIVATE);
                         editor = sharedPreferences.edit();
 
-
-
-
-
                         if (position == 0) {
                             Intent intentEducation = new Intent(MainActivity.this, EducationActivity.class);
                             editor.putString(ClanciHelperPOJO.getWebStranicePREFERENCES(), ClanciHelperPOJO.getEducation_express());
