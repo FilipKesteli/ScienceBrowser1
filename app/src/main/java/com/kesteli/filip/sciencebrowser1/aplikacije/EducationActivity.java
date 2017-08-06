@@ -15,7 +15,16 @@ import android.view.MenuItem;
 
 import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
 import com.kesteli.filip.sciencebrowser1.R;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag1;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag10;
 import com.kesteli.filip.sciencebrowser1.education.EduFrag2;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag3;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag4;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag5;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag6;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag7;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag8;
+import com.kesteli.filip.sciencebrowser1.education.EduFrag9;
 import com.kesteli.filip.sciencebrowser1.history.EurekaActivity;
 import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
 import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
@@ -68,16 +77,16 @@ public class EducationActivity extends AppCompatActivity {
     private void setupFragments() {
         Intent intent = getIntent();
         if (intent.hasExtra(ClanciHelperPOJO.getEducation_express())) {
-            adapter.addFrag(new Frag1(), clanciHelperPOJO.getFizika()[0]);
+            adapter.addFrag(new EduFrag1(), clanciHelperPOJO.getFizika()[0]);
             adapter.addFrag(new EduFrag2(), clanciHelperPOJO.getFizika()[1]);
-            adapter.addFrag(new Frag3(), clanciHelperPOJO.getFizika()[2]);
-            adapter.addFrag(new Frag4(), clanciHelperPOJO.getFizika()[3]);
-            adapter.addFrag(new Frag5(), clanciHelperPOJO.getFizika()[4]);
-            adapter.addFrag(new Frag6(), clanciHelperPOJO.getFizika()[5]);
-            adapter.addFrag(new Frag7(), clanciHelperPOJO.getFizika()[6]);
-            adapter.addFrag(new Frag8(), clanciHelperPOJO.getFizika()[7]);
-            adapter.addFrag(new Frag9(), clanciHelperPOJO.getFizika()[8]);
-            adapter.addFrag(new Frag10(), clanciHelperPOJO.getFizika()[9]);
+            adapter.addFrag(new EduFrag3(), clanciHelperPOJO.getFizika()[2]);
+            adapter.addFrag(new EduFrag4(), clanciHelperPOJO.getFizika()[3]);
+            adapter.addFrag(new EduFrag5(), clanciHelperPOJO.getFizika()[4]);
+            adapter.addFrag(new EduFrag6(), clanciHelperPOJO.getFizika()[5]);
+            adapter.addFrag(new EduFrag7(), clanciHelperPOJO.getFizika()[6]);
+            adapter.addFrag(new EduFrag8(), clanciHelperPOJO.getFizika()[7]);
+            adapter.addFrag(new EduFrag9(), clanciHelperPOJO.getFizika()[8]);
+            adapter.addFrag(new EduFrag10(), clanciHelperPOJO.getFizika()[9]);
             viewPager.setAdapter(adapter);
             for (int i = 0; i < clanciHelperPOJO.getFizika().length; i++) {
                 tabLayout.getTabAt(i).setIcon(clanciHelperPOJO.getImages()[0]);
