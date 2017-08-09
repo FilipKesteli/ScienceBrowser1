@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1.history;
+package com.kesteli.filip.sciencebrowser1.aplikacije.history;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1.education;
+package com.kesteli.filip.sciencebrowser1.aplikacije.education.edufrag;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.kesteli.filip.sciencebrowser1.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EduFrag8 extends Fragment {
+public class EduFrag9 extends Fragment {
 
 
-    public EduFrag8() {
+    public EduFrag9() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class EduFrag8 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edu_frag8, container, false);
+        return inflater.inflate(R.layout.fragment_edu_frag9, container, false);
     }
 
 }

@@ -22,18 +22,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.kesteli.filip.sciencebrowser1.aplikacije.ClanciActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.DemocracyActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.DonationActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.EducationActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.KZInicijativaActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.MotivatorActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.RealityActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.ScienceActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.SmartCityActivity;
-import com.kesteli.filip.sciencebrowser1.history.EurekaActivity;
-import com.kesteli.filip.sciencebrowser1.history.FavoriteActivity;
-import com.kesteli.filip.sciencebrowser1.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.web.ClanciActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.democracy.DemocracyActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.donacije.DonationActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.education.EducationActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.kzinicijativa.KZInicijativaActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.motivatorapp.MotivatorActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.realitycheck.RealityActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.smartcity.SmartCityActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.aplikacije.history.HistoryActivity;
 import com.kesteli.filip.sciencebrowser1.web.WebActivity;
 
 public class MainActivity extends AppCompatActivity

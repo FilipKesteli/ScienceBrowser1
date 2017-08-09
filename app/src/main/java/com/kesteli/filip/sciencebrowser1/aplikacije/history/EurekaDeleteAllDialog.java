@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1.history;
+package com.kesteli.filip.sciencebrowser1.aplikacije.history;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by Filip on 10.9.2016..
  */
-public class FavoriteDeleteAllDialog extends DialogFragment {
+public class EurekaDeleteAllDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -33,7 +33,7 @@ public class FavoriteDeleteAllDialog extends DialogFragment {
                         List<Stranica> stranicaList = databaseHandler.getAllStranice();
                         List<Stranica> stranicaListHistory = new ArrayList<Stranica>();
                         for (int i = 0; i < stranicaList.size(); i++) {
-                            if (stranicaList != null && stranicaList.get(i).get_favorite() == 1) {
+                            if (stranicaList != null && stranicaList.get(i).get_eureka() == 1) {
                                 stranicaListHistory.add(stranicaList.get(i));
                                 databaseHandler.deleteStranica(stranicaList.get(i));
                             }

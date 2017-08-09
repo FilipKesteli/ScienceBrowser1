@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kesteli.filip.sciencebrowser1.aplikacije.SmartCityActivity">
+    tools:context="com.kesteli.filip.sciencebrowser1.aplikacije.smartcity.SmartCityActivity">
 
 </android.support.constraint.ConstraintLayout>

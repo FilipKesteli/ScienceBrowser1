@@ -26,29 +26,34 @@
             android:name=".web.WebActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".history.HistoryActivity"
+            android:name=".aplikacije.history.HistoryActivity"
             android:label="HISTORY"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".history.EurekaActivity"
+            android:name=".aplikacije.history.EurekaActivity"
             android:label="EUREKA"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".history.FavoriteActivity"
+            android:name=".aplikacije.history.FavoriteActivity"
             android:label="FAVORITE"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".aplikacije.ClanciActivity" />
-        <activity android:name=".aplikacije.RealityActivity" />
-        <activity android:name=".aplikacije.EducationActivity" />
-        <activity android:name=".aplikacije.KZInicijativaActivity" />
+        <activity android:name=".web.ClanciActivity" />
+        <activity android:name=".aplikacije.realitycheck.RealityActivity" />
+        <activity
+            android:name=".aplikacije.education.EducationActivity"
+            android:label="Edu Express"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".aplikacije.kzinicijativa.KZInicijativaActivity" />
         <activity android:name=".aplikacije.ScienceActivity" />
-        <activity android:name=".aplikacije.MotivatorActivity" />
-        <activity android:name=".aplikacije.DonationActivity" />
-        <activity android:name=".aplikacije.SmartCityActivity" />
-        <activity android:name=".aplikacije.DemocracyActivity"></activity>
+        <activity android:name=".aplikacije.motivatorapp.MotivatorActivity" />
+        <activity android:name=".aplikacije.donacije.DonationActivity" />
+        <activity android:name=".aplikacije.smartcity.SmartCityActivity" />
+        <activity android:name=".aplikacije.democracy.DemocracyActivity"></activity>
     </application>
 
 </manifest>
+

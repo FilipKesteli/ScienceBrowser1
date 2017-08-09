@@ -238,6 +238,11 @@ public class ClanciHelperPOJO {
     };
 
     private String[] fizika = {"phys.org", "science daily", "physics world", "physics.org", "scitation.aip", "sci american", "discover", "physics.aps", "new scientist", "sci news"};
+    private String[] edukacija = {"Android", "iOS", "Web", "Machine Learning", "Internet of things", ".NET", "Big Data", "Deep Learning", "Neural Networks", "Database management"};
+
+    public String[] getEdukacija() {
+        return edukacija;
+    }
 
     private String[] clanci_kemija = {
             "http://www.scientificamerican.com/chemistry/",
