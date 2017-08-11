@@ -24,9 +24,9 @@ import android.widget.TextView;
 
 import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
 import com.kesteli.filip.sciencebrowser1.R;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.EurekaActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.FavoriteActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.HistoryActivity;
 
 public class ClanciActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

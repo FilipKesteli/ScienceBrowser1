@@ -14,9 +14,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.kesteli.filip.sciencebrowser1.ClanciHelperPOJO;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.EurekaActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.FavoriteActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.HistoryActivity;
 import com.kesteli.filip.sciencebrowser1.R;
 import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag1;
 import com.kesteli.filip.sciencebrowser1.web.fragmenti.Frag10;

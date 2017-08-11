@@ -30,9 +30,9 @@ import com.kesteli.filip.sciencebrowser1.aplikacije.kzinicijativa.KZInicijativaA
 import com.kesteli.filip.sciencebrowser1.aplikacije.motivatorapp.MotivatorActivity;
 import com.kesteli.filip.sciencebrowser1.aplikacije.realitycheck.RealityActivity;
 import com.kesteli.filip.sciencebrowser1.aplikacije.smartcity.SmartCityActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.EurekaActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.FavoriteActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.HistoryActivity;
 import com.kesteli.filip.sciencebrowser1.web.WebActivity;
 
 public class MainActivity extends AppCompatActivity

@@ -37,6 +37,36 @@ public class ClanciHelperPOJO {
 
     /**
      * *******************************************************************************************
+     * PITANJA ZA REALITY CHECK
+     */
+
+    //TODO Napraviti bazu podataka RealityCheck s tablicama Tim i Clan, sve u ovoj aplikaciji
+    private static final String[] pitanjaTimReality = {
+            "Koliko je ljudi koje će zahvatiti projekt?",
+            "Koliko takvih projekata već postoji na internetu?",
+            "Koliko vi vjerujete da će projekt uspjeti?",
+            "Koliko ćete uložiti u projekt?",
+            "Koliko je realno da će projekt uspjeti?",
+            "Tko će uložiti u projekt?",
+            "Koja je motivacija za za projekt?",
+            "Koliko ste Vi kao ekipa motivirani za projekt?",
+            "Zabilježite koja sve područja projekt pokriva.",
+            "Kolika je šansa da će netko uložiti u projekt?"
+    };
+
+    private static final String[] pitanjaClanReality = {
+            "Ime",
+            "Prezime",
+            "Godine",
+            "Iskustvo u tehnologiji kojom će se tim baviti (u mjesecima)",
+            "Iskustvo općenito (u mjesecima)",
+            "Obrazovanje",
+            "Koliko je dana prošlo od kad je zadnji puta radio?"
+    };
+
+
+    /**
+     * *******************************************************************************************
      */
 
     private static final String fizika_clanci = "fizika_clanci";

@@ -108,4 +108,5 @@
     <string name="geology">Geology</string>
     <string name="title_activity_eureka">EurekaActivity</string>
     <string name="title_activity_favorite">FavoriteActivity</string>
+    <string name="title_activity_drink_maps">Map</string>
 </resources>

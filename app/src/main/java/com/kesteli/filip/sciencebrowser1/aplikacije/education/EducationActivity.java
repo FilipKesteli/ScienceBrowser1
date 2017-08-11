@@ -25,9 +25,9 @@ import com.kesteli.filip.sciencebrowser1.aplikacije.education.edufrag.EduFrag6;
 import com.kesteli.filip.sciencebrowser1.aplikacije.education.edufrag.EduFrag7;
 import com.kesteli.filip.sciencebrowser1.aplikacije.education.edufrag.EduFrag8;
 import com.kesteli.filip.sciencebrowser1.aplikacije.education.edufrag.EduFrag9;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.EurekaActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.FavoriteActivity;
-import com.kesteli.filip.sciencebrowser1.aplikacije.history.HistoryActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.EurekaActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.FavoriteActivity;
+import com.kesteli.filip.sciencebrowser1.web.history.HistoryActivity;
 
 import java.util.ArrayList;
 import java.util.List;

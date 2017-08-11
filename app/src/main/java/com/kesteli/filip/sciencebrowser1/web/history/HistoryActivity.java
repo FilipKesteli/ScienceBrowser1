@@ -1,4 +1,4 @@
-package com.kesteli.filip.sciencebrowser1.aplikacije.history;
+package com.kesteli.filip.sciencebrowser1.web.history;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,10 +25,10 @@ import com.kesteli.filip.sciencebrowser1.bazapodataka.Stranica;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavoriteActivity extends AppCompatActivity {
+public class HistoryActivity extends AppCompatActivity {
 
     private ClanciHelperPOJO clanciHelperPOJO = new ClanciHelperPOJO();
-    private List<Stranica> straniceFAVORITE = new ArrayList<>();
+    private List<Stranica> straniceHISTORY = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class FavoriteActivity extends AppCompatActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Toast.makeText(FavoriteActivity.this, "Result: " + resultCode, Toast.LENGTH_SHORT).show();
+        Toast.makeText(HistoryActivity.this, "Result: " + resultCode, Toast.LENGTH_SHORT).show();
         if (resultCode == Activity.RESULT_OK) {
             setupDatabase();
             setupRecyclerView();
@@ -64,9 +64,9 @@ public class FavoriteActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FavoriteDeleteAllDialog favoriteDeleteAllDialog = new FavoriteDeleteAllDialog();
+                HistoryDeleteAllDialog historyDeleteAllDialog = new HistoryDeleteAllDialog();
 //                historyDeleteAllDialog.onActivityResult();
-                favoriteDeleteAllDialog.show(getFragmentManager(), null);
+                historyDeleteAllDialog.show(getFragmentManager(), null);
 //                onCreate(new Bundle());
             }
         });
@@ -76,8 +76,8 @@ public class FavoriteActivity extends AppCompatActivity {
         DatabaseHandler databaseHandler = new DatabaseHandler(getApplicationContext());
         List<Stranica> stranice = databaseHandler.getAllStranice();
         for (int i = 0; i < stranice.size(); i++) {
-            if (stranice != null && stranice.get(i).get_favorite() == 1) {
-                straniceFAVORITE.add(stranice.get(i));
+            if (stranice != null && stranice.get(i).get_history() == 1) {
+                straniceHISTORY.add(stranice.get(i));
             }
         }
     }
@@ -89,7 +89,7 @@ public class FavoriteActivity extends AppCompatActivity {
 
     private void setupRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_history);
-        gridLayoutManager = new GridLayoutManager(FavoriteActivity.this, 2);
+        gridLayoutManager = new GridLayoutManager(HistoryActivity.this, 2);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 //        recyclerView.setLayoutManager(gridLayoutManager);
@@ -103,21 +103,21 @@ public class FavoriteActivity extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.card_layout_favorites, parent, false);
+                    .inflate(R.layout.card_layout_history, parent, false);
             ViewHolder viewHolder = new ViewHolder(view);
             return viewHolder;
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.tvSite.setText(straniceFAVORITE.get(position).get_site());
+            holder.tvSite.setText(straniceHISTORY.get(position).get_site());
         }
 
 //        private List<Stranica> stranice;
 
         @Override
         public int getItemCount() {
-            return straniceFAVORITE.size();
+            return straniceHISTORY.size();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -143,7 +143,7 @@ public class FavoriteActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_favorite, menu);
+        getMenuInflater().inflate(R.menu.menu_history, menu);
         return true;
     }
 
@@ -155,15 +155,16 @@ public class FavoriteActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_eureka) {
-            Intent intent = new Intent(FavoriteActivity.this, EurekaActivity.class);
+            Intent intent = new Intent(HistoryActivity.this, EurekaActivity.class);
             startActivity(intent);
             return true;
-        } else if (id == R.id.action_history) {
-            Intent intent = new Intent(FavoriteActivity.this, HistoryActivity.class);
+        } else if (id == R.id.action_favorite) {
+            Intent intent = new Intent(HistoryActivity.this, FavoriteActivity.class);
             startActivity(intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
