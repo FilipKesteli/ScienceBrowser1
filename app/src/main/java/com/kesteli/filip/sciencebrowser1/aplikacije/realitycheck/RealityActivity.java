@@ -65,10 +65,8 @@ public class RealityActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EurekaDeleteAllDialog eurekaDeleteAllDialog = new EurekaDeleteAllDialog();
-//                historyDeleteAllDialog.onActivityResult();
-                eurekaDeleteAllDialog.show(getFragmentManager(), null);
-//                onCreate(new Bundle());
+                Intent intentRealityClan = new Intent(RealityActivity.this, RealityClanActivity.class);
+                startActivity(intentRealityClan);
             }
         });
     }
