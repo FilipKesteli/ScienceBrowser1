@@ -14,14 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kesteli.filip.sciencebrowser1.DatabaseHandler;
 import com.kesteli.filip.sciencebrowser1.R;
 import com.kesteli.filip.sciencebrowser1.bazapodataka.Stranica;
-import com.kesteli.filip.sciencebrowser1.web.history.EurekaActivity;
-import com.kesteli.filip.sciencebrowser1.web.history.EurekaDeleteAllDialog;
 import com.kesteli.filip.sciencebrowser1.web.history.FavoriteActivity;
 import com.kesteli.filip.sciencebrowser1.web.history.HistoryActivity;
 
@@ -32,15 +31,41 @@ public class RealityActivity extends AppCompatActivity {
 
     private List<Stranica> straniceEUREKA = new ArrayList<>();
 
+    private EditText et1;
+    private EditText et2;
+    private EditText et3;
+    private EditText et4;
+    private EditText et5;
+    private EditText et6;
+    private EditText et7;
+    private EditText et8;
+    private EditText et9;
+    private EditText et10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reality);
+        initWidgets();
         setupToolbar();
         setupListeners();
 
         setupDatabase();
         setupRecyclerView();
+    }
+
+    private void initWidgets() {
+        //TODO Dodati et-ove
+        et1 = (EditText) findViewById(R.id.et1);
+        et2 = (EditText) findViewById(R.id.et2);
+        et3 = (EditText) findViewById(R.id.et3);
+        et4 = (EditText) findViewById(R.id.et4);
+        et5 = (EditText) findViewById(R.id.et5);
+        et6 = (EditText) findViewById(R.id.et6);
+        et7 = (EditText) findViewById(R.id.et7);
+        et8 = (EditText) findViewById(R.id.et8);
+        et9 = (EditText) findViewById(R.id.et9);
+        et10 = (EditText) findViewById(R.id.et10);
     }
 
     @Override
@@ -65,8 +90,9 @@ public class RealityActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentRealityClan = new Intent(RealityActivity.this, RealityClanActivity.class);
-                startActivity(intentRealityClan);
+                //TODO Napraviti dialog
+                Intent intentRezultati = new Intent(RealityActivity.this, RealityRezultatiActivity.class);
+                startActivity(intentRezultati);
             }
         });
     }
@@ -102,26 +128,22 @@ public class RealityActivity extends AppCompatActivity {
      */
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.card_layout_reality_tim, parent, false);
-            RecyclerAdapter.ViewHolder viewHolder = new RecyclerAdapter.ViewHolder(view);
-            return viewHolder;
+        private String[] mDataset;
+
+        // Provide a suitable constructor (depends on the kind of dataset)
+        public RecyclerAdapter(String[] myDataset) {
+            mDataset = myDataset;
         }
 
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.tvSite.setText(straniceEUREKA.get(position).get_site());
+        public RecyclerAdapter() {
+
         }
 
-//        private List<Stranica> stranice;
-
-        @Override
-        public int getItemCount() {
-            return straniceEUREKA.size();
-        }
-
+        /**
+         * Provide a reference to the views for each data item.
+         * Complex data items may need more than one view per item,
+         * and you provide access to all the views for a data item in a view holder
+         */
         public class ViewHolder extends RecyclerView.ViewHolder {
 
             public List<Stranica> stranice;
@@ -129,16 +151,33 @@ public class RealityActivity extends AppCompatActivity {
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                tvSite = (TextView) itemView.findViewById(R.id.tvSite);
-
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         int position = getAdapterPosition();
-
                     }
                 });
             }
+        }
+
+        @Override
+        public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.card_layout_reality_tim, parent, false);
+            ViewHolder viewHolder = new ViewHolder(view);
+            return viewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(ViewHolder holder, int position) {
+            //holder.tvSite.setText(straniceEUREKA.get(position).get_site());
+        }
+
+//        private List<Stranica> stranice;
+
+        @Override
+        public int getItemCount() {
+            return 10;
         }
     }
 
@@ -169,3 +208,6 @@ public class RealityActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
+

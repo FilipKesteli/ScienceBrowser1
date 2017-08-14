@@ -75,7 +75,8 @@
         <activity
             android:name=".aplikacije.kzinicijativa.DrinkMapsActivity"
             android:label="@string/title_activity_drink_maps" />
-        <activity android:name=".aplikacije.realitycheck.RealityClanActivity"></activity>
+        <activity android:name=".aplikacije.realitycheck.RealityClanActivity" />
+        <activity android:name=".aplikacije.realitycheck.RealityRezultatiActivity"></activity>
     </application>
 
 </manifest>

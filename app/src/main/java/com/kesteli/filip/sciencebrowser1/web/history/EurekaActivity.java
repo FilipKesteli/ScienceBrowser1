@@ -97,7 +97,6 @@ public class EurekaActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
         @Override
